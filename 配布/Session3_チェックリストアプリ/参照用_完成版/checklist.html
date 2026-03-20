@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>業務チェックリスト</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Yu Gothic", "游ゴシック", -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #f5f5f5;
+      color: #262626;
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    header {
+      margin-bottom: 32px;
+    }
+
+    header h1 {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: #1a1a1a;
+    }
+
+    header p {
+      font-size: 13px;
+      color: #888;
+      margin-top: 6px;
+    }
+
+    /* リスト追加エリア */
+    .new-list-form {
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      padding: 20px;
+      margin-bottom: 24px;
+    }
+
+    .new-list-form .form-row {
+      display: flex;
+      gap: 10px;
+    }
+
+    .new-list-form input[type="text"] {
+      flex: 1;
+      padding: 10px 14px;
+      border: 1px solid #d0d0d0;
+      font-size: 14px;
+      font-family: inherit;
+      color: #262626;
+      outline: none;
+    }
+
+    .new-list-form input[type="text"]:focus {
+      border-color: #2180FF;
+    }
+
+    .btn-primary {
+      padding: 10px 22px;
+      background: #2180FF;
+      color: #fff;
+      border: none;
+      font-size: 14px;
+      font-family: inherit;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .btn-primary:hover {
+      background: #1a6fe0;
+    }
+
+    /* チェックリストカード */
+    .list-card {
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      margin-bottom: 20px;
+    }
+
+    .list-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 20px;
+      border-bottom: 1px solid #ebebeb;
+    }
+
+    .list-card-header .list-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #1a1a1a;
+    }
+
+    .list-card-header .list-stats {
+      font-size: 12px;
+      color: #999;
+      margin-left: 10px;
+    }
+
+    .btn-delete-list {
+      background: none;
+      border: none;
+      color: #bbb;
+      font-size: 18px;
+      cursor: pointer;
+      line-height: 1;
+      padding: 2px 6px;
+    }
+
+    .btn-delete-list:hover {
+      color: #999;
+    }
+
+    /* アイテム追加フォーム */
+    .item-add-form {
+      display: flex;
+      gap: 0;
+      padding: 12px 20px;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .item-add-form input[type="text"] {
+      flex: 1;
+      padding: 8px 12px;
+      border: 1px solid #d0d0d0;
+      border-right: none;
+      font-size: 13px;
+      font-family: inherit;
+      color: #262626;
+      outline: none;
+    }
+
+    .item-add-form input[type="text"]:focus {
+      border-color: #2180FF;
+    }
+
+    .item-add-form button {
+      padding: 8px 16px;
+      background: #f0f0f0;
+      border: 1px solid #d0d0d0;
+      font-size: 13px;
+      font-family: inherit;
+      color: #555;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .item-add-form button:hover {
+      background: #e8e8e8;
+    }
+
+    /* チェックアイテム一覧 */
+    .item-list {
+      list-style: none;
+    }
+
+    .item-list li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 20px;
+      border-bottom: 1px solid #f5f5f5;
+    }
+
+    .item-list li:last-child {
+      border-bottom: none;
+    }
+
+    .item-list li input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+      accent-color: #2180FF;
+      flex-shrink: 0;
+    }
+
+    .item-list li .item-label {
+      flex: 1;
+      font-size: 14px;
+      color: #262626;
+      line-height: 1.5;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .item-list li.completed .item-label {
+      text-decoration: line-through;
+      color: #aaa;
+    }
+
+    .btn-delete-item {
+      background: none;
+      border: none;
+      color: #d0d0d0;
+      font-size: 16px;
+      cursor: pointer;
+      line-height: 1;
+      padding: 2px 4px;
+      opacity: 0;
+      transition: opacity 0.15s;
+    }
+
+    .item-list li:hover .btn-delete-item {
+      opacity: 1;
+    }
+
+    .btn-delete-item:hover {
+      color: #999;
+    }
+
+    /* 空の状態 */
+    .empty-message {
+      padding: 16px 20px;
+      font-size: 13px;
+      color: #bbb;
+      font-style: italic;
+    }
+
+    /* 進捗バー */
+    .progress-bar-wrap {
+      height: 3px;
+      background: #f0f0f0;
+    }
+
+    .progress-bar-fill {
+      height: 3px;
+      background: #2180FF;
+      transition: width 0.3s ease;
+    }
+
+    /* フッター */
+    footer {
+      margin-top: 40px;
+      font-size: 12px;
+      color: #ccc;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>業務チェックリスト</h1>
+      <p>データはこのブラウザに自動保存されます</p>
+    </header>
+
+    <div class="new-list-form">
+      <div class="form-row">
+        <input type="text" id="new-list-title" placeholder="リスト名を入力（例：設備点検チェック）" maxlength="50">
+        <button class="btn-primary" onclick="addList()">リストを追加</button>
+      </div>
+    </div>
+
+    <div id="lists-container"></div>
+
+    <footer>Claude Code × VSCode ハンズオン研修 成果物</footer>
+  </div>
+
+  <script>
+    // ローカルストレージから読み込み
+    function loadData() {
+      const raw = localStorage.getItem('checklist-app-data');
+      if (raw) return JSON.parse(raw);
+
+      // 初回起動時のサンプルデータ（ツムラ様の業務文脈）
+      return [
+        {
+          id: 'list-demo-1',
+          title: '設備点検チェック（第一工場）',
+          items: [
+            { id: 'item-1', text: '油圧ポンプの圧力確認', done: true },
+            { id: 'item-2', text: '温度センサー動作確認', done: true },
+            { id: 'item-3', text: '冷却水量チェック', done: false },
+            { id: 'item-4', text: '非常停止ボタンのテスト', done: false },
+            { id: 'item-5', text: '点検記録への署名・押印', done: false },
+          ]
+        },
+        {
+          id: 'list-demo-2',
+          title: '承認申請 事前確認',
+          items: [
+            { id: 'item-6', text: '申請書類の記入漏れ確認', done: false },
+            { id: 'item-7', text: '添付ファイルの名称確認', done: false },
+            { id: 'item-8', text: '上長のメールアドレス確認', done: false },
+          ]
+        }
+      ];
+    }
+
+    // ローカルストレージへ保存
+    function saveData(lists) {
+      localStorage.setItem('checklist-app-data', JSON.stringify(lists));
+    }
+
+    // ユニークID生成
+    function genId() {
+      return 'id-' + Date.now() + '-' + Math.floor(Math.random() * 10000);
+    }
+
+    // 全体を再描画
+    function render() {
+      const lists = loadData();
+      const container = document.getElementById('lists-container');
+      container.innerHTML = '';
+
+      if (lists.length === 0) {
+        container.innerHTML = '<p style="color:#bbb;font-size:14px;">リストがありません。上のフォームから追加してください。</p>';
+        return;
+      }
+
+      lists.forEach(list => {
+        const doneCount = list.items.filter(i => i.done).length;
+        const total = list.items.length;
+        const pct = total === 0 ? 0 : Math.round((doneCount / total) * 100);
+
+        const card = document.createElement('div');
+        card.className = 'list-card';
+        card.innerHTML = `
+          <div class="list-card-header">
+            <div style="display:flex;align-items:center;gap:8px;">
+              <span class="list-title">${escHtml(list.title)}</span>
+              <span class="list-stats">${doneCount} / ${total} 完了</span>
+            </div>
+            <button class="btn-delete-list" onclick="deleteList('${list.id}')" title="リストを削除">×</button>
+          </div>
+          <div class="progress-bar-wrap">
+            <div class="progress-bar-fill" style="width:${pct}%"></div>
+          </div>
+          <div class="item-add-form">
+            <input type="text" id="item-input-${list.id}" placeholder="チェック項目を入力" maxlength="100"
+              onkeydown="if(event.key==='Enter') addItem('${list.id}')">
+            <button onclick="addItem('${list.id}')">追加</button>
+          </div>
+          <ul class="item-list" id="item-list-${list.id}">
+            ${renderItems(list)}
+          </ul>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function renderItems(list) {
+      if (list.items.length === 0) {
+        return '<li><span class="empty-message">項目がありません</span></li>';
+      }
+      return list.items.map(item => `
+        <li class="${item.done ? 'completed' : ''}" id="${item.id}">
+          <input type="checkbox" ${item.done ? 'checked' : ''}
+            onchange="toggleItem('${list.id}', '${item.id}')">
+          <span class="item-label" onclick="toggleItem('${list.id}', '${item.id}')">${escHtml(item.text)}</span>
+          <button class="btn-delete-item" onclick="deleteItem('${list.id}', '${item.id}')" title="削除">×</button>
+        </li>
+      `).join('');
+    }
+
+    // リスト追加
+    function addList() {
+      const input = document.getElementById('new-list-title');
+      const title = input.value.trim();
+      if (!title) {
+        input.focus();
+        return;
+      }
+      const lists = loadData();
+      lists.push({ id: genId(), title, items: [] });
+      saveData(lists);
+      input.value = '';
+      render();
+    }
+
+    // リスト削除
+    function deleteList(listId) {
+      if (!confirm('このリストを削除しますか？')) return;
+      const lists = loadData().filter(l => l.id !== listId);
+      saveData(lists);
+      render();
+    }
+
+    // アイテム追加
+    function addItem(listId) {
+      const input = document.getElementById('item-input-' + listId);
+      const text = input.value.trim();
+      if (!text) {
+        input.focus();
+        return;
+      }
+      const lists = loadData();
+      const list = lists.find(l => l.id === listId);
+      if (!list) return;
+      list.items.push({ id: genId(), text, done: false });
+      saveData(lists);
+      render();
+      // 追加後にフォーカスを戻す
+      setTimeout(() => {
+        const newInput = document.getElementById('item-input-' + listId);
+        if (newInput) newInput.focus();
+      }, 10);
+    }
+
+    // チェック切り替え
+    function toggleItem(listId, itemId) {
+      const lists = loadData();
+      const list = lists.find(l => l.id === listId);
+      if (!list) return;
+      const item = list.items.find(i => i.id === itemId);
+      if (!item) return;
+      item.done = !item.done;
+      saveData(lists);
+      render();
+    }
+
+    // アイテム削除
+    function deleteItem(listId, itemId) {
+      const lists = loadData();
+      const list = lists.find(l => l.id === listId);
+      if (!list) return;
+      list.items = list.items.filter(i => i.id !== itemId);
+      saveData(lists);
+      render();
+    }
+
+    // XSS対策
+    function escHtml(str) {
+      return str
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    // Enterキーでリスト追加
+    document.getElementById('new-list-title').addEventListener('keydown', e => {
+      if (e.key === 'Enter') addList();
+    });
+
+    // 初回描画
+    render();
+  </script>
+</body>
+</html>

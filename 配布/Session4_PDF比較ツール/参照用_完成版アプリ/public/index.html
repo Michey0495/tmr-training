@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PDF文書比較ツール</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>PDF文書比較ツール</h1>
+    <p class="subtitle">2つのPDFをアップロードして、AIが差分を分析します</p>
+  </header>
+
+  <main>
+    <!-- アップロードセクション -->
+    <section class="upload-section">
+      <div class="upload-area" id="uploadArea1">
+        <div class="upload-content">
+          <div class="upload-icon">1</div>
+          <p class="upload-label">文書1</p>
+          <p class="upload-hint">クリックまたはドラッグ&ドロップ</p>
+          <p class="file-name" id="fileName1">未選択</p>
+        </div>
+        <input type="file" id="fileInput1" accept=".pdf" hidden>
+      </div>
+
+      <div class="upload-area" id="uploadArea2">
+        <div class="upload-content">
+          <div class="upload-icon">2</div>
+          <p class="upload-label">文書2</p>
+          <p class="upload-hint">クリックまたはドラッグ&ドロップ</p>
+          <p class="file-name" id="fileName2">未選択</p>
+        </div>
+        <input type="file" id="fileInput2" accept=".pdf" hidden>
+      </div>
+    </section>
+
+    <div class="action-row">
+      <button id="compareBtn" class="btn-primary" disabled>比較を実行する</button>
+    </div>
+
+    <!-- ローディング -->
+    <div id="loading" class="loading" hidden>
+      <div class="spinner"></div>
+      <p>AIが文書を分析しています...</p>
+    </div>
+
+    <!-- エラー表示 -->
+    <div id="errorArea" class="error-area" hidden></div>
+
+    <!-- 比較結果セクション -->
+    <section id="resultSection" class="result-section" hidden>
+      <!-- 概要 -->
+      <div class="result-card">
+        <h2>比較概要</h2>
+        <div class="doc-overview">
+          <div class="doc-box doc1">
+            <h3 id="doc1Name"></h3>
+            <p id="doc1Overview"></p>
+          </div>
+          <div class="doc-box doc2">
+            <h3 id="doc2Name"></h3>
+            <p id="doc2Overview"></p>
+          </div>
+        </div>
+        <p id="summaryText" class="summary-text"></p>
+      </div>
+
+      <!-- 一致点 -->
+      <div class="result-card">
+        <h2>一致している点</h2>
+        <div id="matchesList" class="items-list"></div>
+      </div>
+
+      <!-- 相違点 -->
+      <div class="result-card">
+        <h2>相違点</h2>
+        <div id="differencesList" class="differences-table-wrap"></div>
+      </div>
+
+      <!-- 片方のみの内容 -->
+      <div class="result-card two-col">
+        <div class="only-col">
+          <h2>文書1のみに記載</h2>
+          <div id="onlyDoc1" class="items-list"></div>
+        </div>
+        <div class="only-col">
+          <h2>文書2のみに記載</h2>
+          <div id="onlyDoc2" class="items-list"></div>
+        </div>
+      </div>
+
+      <!-- 発展課題: 形式変換 -->
+      <div class="result-card convert-section">
+        <h2>出力形式を変換する</h2>
+        <p class="convert-desc">比較結果を別の形式に変換できます</p>
+        <div class="convert-buttons">
+          <button id="reportBtn" class="btn-secondary">レポート形式で出力</button>
+          <button id="emailBtn" class="btn-secondary">メール形式に変換</button>
+        </div>
+      </div>
+
+      <!-- 変換結果 -->
+      <div id="convertResult" class="result-card convert-result" hidden>
+        <div class="convert-header">
+          <h2 id="convertTitle"></h2>
+          <button id="copyBtn" class="btn-copy">コピー</button>
+        </div>
+        <pre id="convertContent" class="convert-content"></pre>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Claude API を活用したAI文書比較ツール</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
