@@ -99,11 +99,11 @@ a{color:var(--blue);text-decoration:none;transition:opacity .2s}a:hover{opacity:
 <div class="hero">
   <div class="hero-badge">SESSION 02</div>
   <h1>環境構築<em>ハンズオン</em></h1>
-  <p class="hero-sub">VSCode、Node.js、Claude Codeをインストールし、AIに話しかけられる状態を作ります。ターミナルの最低限の操作もここで覚えます。</p>
+  <p class="hero-sub">事前にインストールしたVSCodeを起動し、Node.jsとClaude Codeをセットアップします。ターミナルの最低限の操作もここで覚えます。</p>
   <div class="hero-meta">
     <div class="hero-meta-item">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-      13:20 - 14:20（60分）
+      13:20 - 13:50（30分）
     </div>
     <div class="hero-meta-item">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
@@ -115,67 +115,25 @@ a{color:var(--blue);text-decoration:none;transition:opacity .2s}a:hover{opacity:
 
 <section class="section" id="step1">
   <div class="section-label">STEP 1 / 10 MIN</div>
-  <div class="section-title">VSCode をインストールする</div>
+  <div class="section-title">ターミナルの基本操作と作業フォルダの作成</div>
 
   <div class="topic">
-    <p><span class="term" data-def="Microsoft社が無料提供するコードエディタ。拡張機能が豊富で、ターミナルも内蔵しています。">VSCode（Visual Studio Code）</span>はMicrosoft社が提供する無料のエディタです。本日の研修では、この画面の中で作業を進めます。既にインストール済みの方は次の手順へ進んでください。</p>
+    <p>事前にインストールしたVSCodeを起動してください。<span class="term" data-def="Microsoft社が無料提供するコードエディタ。拡張機能が豊富で、ターミナルも内蔵しています。">VSCode（Visual Studio Code）</span>の中にある<span class="term" data-def="テキストでコンピュータに命令を出す画面。黒い背景に白い文字で表示されるのが一般的です。">ターミナル</span>を使って、研修の作業フォルダを準備します。覚えるコマンドは3つだけです。</p>
   </div>
 
   <div class="disc">
     <div class="disc-label">HANDS-ON</div>
-    <h3>VSCode のダウンロードとインストール</h3>
+    <h3>VSCodeでターミナルを開く</h3>
     <ol>
-      <li>ブラウザで <a href="https://code.visualstudio.com/" target="_blank" rel="noopener">code.visualstudio.com</a> にアクセスする</li>
-      <li>青い「Download for Windows」ボタンをクリック</li>
-      <li>ダウンロードされた .exe ファイルをダブルクリック</li>
-      <li>インストーラーの指示に従い「次へ」を押していく（設定は初期値のままでOK）</li>
-      <li>「デスクトップ上にアイコンを作成する」にチェックを入れておくと便利です</li>
-      <li>インストールが完了したらVSCodeを起動する</li>
-    </ol>
-  </div>
-
-  <div class="topic">
-    <div class="topic-title">日本語化（任意）</div>
-    <p>メニューを日本語にしたい方は、以下の手順で設定してください。</p>
-  </div>
-
-  <div class="flow">
-    <div class="flow-step">
-      <div class="flow-step-label">Ctrl + Shift + X を押す</div>
-      <div class="flow-step-desc">拡張機能の検索パネルが開きます。</div>
-    </div>
-    <div class="flow-step">
-      <div class="flow-step-label">「Japanese」と入力して検索</div>
-      <div class="flow-step-desc">「Japanese Language Pack for Visual Studio Code」が見つかります。</div>
-    </div>
-    <div class="flow-step">
-      <div class="flow-step-label">Install ボタンをクリック</div>
-      <div class="flow-step-desc">インストールが始まります。数秒で完了します。</div>
-    </div>
-    <div class="flow-step is-end">
-      <div class="flow-step-label">「Change Language and Restart」をクリック</div>
-      <div class="flow-step-desc">VSCodeが再起動し、メニューが日本語に変わります。</div>
-    </div>
-  </div>
-</section>
-
-
-<section class="section" id="step2">
-  <div class="section-label">STEP 2 / 10 MIN</div>
-  <div class="section-title">ターミナルの基本操作</div>
-
-  <div class="topic">
-    <p><span class="term" data-def="テキストでコンピュータに命令を出す画面。黒い背景に白い文字で表示されるのが一般的です。">ターミナル</span>は、テキストでPCに指示を出す画面です。Claude Codeはこのターミナル上で動きます。覚えるコマンドは3つだけです。</p>
-  </div>
-
-  <div class="disc">
-    <div class="disc-label">HANDS-ON</div>
-    <h3>ターミナルを開く</h3>
-    <ol>
-      <li>VSCodeの上部メニューから「ターミナル」を選択</li>
-      <li>「新しいターミナル」をクリック</li>
+      <li>VSCodeを起動する</li>
+      <li>上部メニューから「ターミナル」→「新しいターミナル」をクリック</li>
       <li>画面下部にターミナルが表示されます</li>
     </ol>
+  </div>
+
+  <div class="callout callout-warn">
+    <div class="callout-title">VSCodeがまだ入っていない方へ</div>
+    <p><a href="https://code.visualstudio.com/" target="_blank" rel="noopener">code.visualstudio.com</a> からダウンロードしてインストールしてください。設定は初期値のままで進めて問題ありません。日本語化したい方は Ctrl+Shift+X で拡張機能を開き「Japanese」で検索してインストールしてください。</p>
   </div>
 
   <div class="card-grid">
@@ -205,7 +163,7 @@ a{color:var(--blue);text-decoration:none;transition:opacity .2s}a:hover{opacity:
 
   <div class="disc">
     <div class="disc-label">EXERCISE</div>
-    <h3>実際にやってみましょう</h3>
+    <h3>作業フォルダを作成する</h3>
     <ol>
       <li>ターミナルで <code>cd Desktop</code> と入力してEnter</li>
       <li><code>mkdir training</code> と入力してEnter</li>
@@ -215,14 +173,14 @@ a{color:var(--blue);text-decoration:none;transition:opacity .2s}a:hover{opacity:
   </div>
 
   <div class="callout">
-    <div class="callout-title">ここで全員の画面を確認します</div>
-    <p>ターミナルの表示が <code>training</code> フォルダを指していることを確認してから次に進みます。うまくいかない方は講師に声をかけてください。</p>
+    <div class="callout-title">達成条件</div>
+    <p>ターミナルの現在ディレクトリが <code>training</code> になっていれば成功です。パスの末尾に <code>Desktop/training</code> と表示されていることを確認してください。うまくいかない方は講師に声をかけてください。</p>
   </div>
 </section>
 
 
-<section class="section" id="step3">
-  <div class="section-label">STEP 3 / 10 MIN</div>
+<section class="section" id="step2">
+  <div class="section-label">STEP 2 / 5 MIN</div>
   <div class="section-title">Node.js をインストールする</div>
 
   <div class="topic">
@@ -235,7 +193,7 @@ a{color:var(--blue);text-decoration:none;transition:opacity .2s}a:hover{opacity:
     <ol>
       <li><a href="https://nodejs.org/" target="_blank" rel="noopener">nodejs.org</a> にアクセスする</li>
       <li>「LTS」と書かれた緑のボタンをクリック（推奨版です）</li>
-      <li>ダウンロードされた .msi ファイルをダブルクリック</li>
+      <li>ダウンロードされたインストーラーをダブルクリック</li>
       <li>インストーラーの指示に従って進める（すべて初期値でOK）</li>
       <li>インストール完了後、VSCodeのターミナルを閉じて開き直す</li>
     </ol>
@@ -243,10 +201,16 @@ a{color:var(--blue);text-decoration:none;transition:opacity .2s}a:hover{opacity:
 
   <div class="topic">
     <div class="topic-title">インストールの確認</div>
+    <p>ターミナルで以下を実行してください。</p>
   </div>
 
   <div class="code-block">node --version
 <span class="cm">// v22.x.x のようなバージョン番号が表示されれば成功です</span></div>
+
+  <div class="callout">
+    <div class="callout-title">達成条件</div>
+    <p><code>node --version</code> を実行してバージョン番号（v22.x.x など）が表示されていれば成功です。</p>
+  </div>
 
   <div class="callout callout-warn">
     <div class="callout-title">バージョンが表示されない場合</div>
@@ -255,8 +219,8 @@ a{color:var(--blue);text-decoration:none;transition:opacity .2s}a:hover{opacity:
 </section>
 
 
-<section class="section" id="step4">
-  <div class="section-label">STEP 4 / 20 MIN</div>
+<section class="section" id="step3">
+  <div class="section-label">STEP 3 / 15 MIN</div>
   <div class="section-title">Claude Code をセットアップする</div>
 
   <div class="topic">
@@ -280,6 +244,11 @@ curl -fsSL https://claude.ai/install.sh | sh</div>
 
   <div class="code-block">claude --version
 <span class="cm">// バージョン番号が表示されれば成功</span></div>
+
+  <div class="callout callout-warn">
+    <div class="callout-title">つまずきポイント: コマンドが見つからない</div>
+    <p>「claude: command not found」と表示される場合は、VSCodeを完全に閉じて再起動してください。再起動後に再度 <code>cd Desktop/training</code> で作業フォルダに戻ることを忘れずに。</p>
+  </div>
 
   <div class="topic">
     <div class="topic-title">ログイン</div>
@@ -308,6 +277,11 @@ curl -fsSL https://claude.ai/install.sh | sh</div>
     </div>
   </div>
 
+  <div class="callout callout-warn">
+    <div class="callout-title">つまずきポイント: ブラウザが開かない</div>
+    <p>ターミナルに表示されるURLをコピーしてブラウザに貼り付けてください。<code>c</code> キーでURLがクリップボードにコピーされます。</p>
+  </div>
+
   <div class="topic">
     <div class="topic-title">動作確認</div>
     <p>Claude Codeの入力欄に以下を入力してEnterを押してください。</p>
@@ -316,8 +290,8 @@ curl -fsSL https://claude.ai/install.sh | sh</div>
   <div class="code-block">こんにちは。動作確認です。今日の日付を教えてください。</div>
 
   <div class="callout">
-    <div class="callout-title">応答が返ってきたら成功です</div>
-    <p>Claude Codeが日本語で応答すれば、セットアップは完了です。お疲れさまでした。</p>
+    <div class="callout-title">達成条件</div>
+    <p>Claude Codeに「こんにちは」と送り、日本語の応答が返ってくれば成功です。これで環境構築は完了しました。</p>
   </div>
 </section>
 
@@ -325,6 +299,13 @@ curl -fsSL https://claude.ai/install.sh | sh</div>
 <section class="section" id="screen">
   <div class="section-label">REFERENCE</div>
   <div class="section-title">画面の見方と基本操作</div>
+
+  <div style="margin:0 auto 24px;max-width:420px;position:relative">
+    <img src="images/vscode-layout.png" alt="VSCode画面構成" style="width:100%;height:auto;display:block;border:1px solid var(--gray-100);border-radius:var(--radius)">
+    <span style="position:absolute;top:28%;left:4%;font-size:.72rem;font-weight:700;color:var(--gray-700);background:rgba(255,255,255,.9);padding:2px 8px;border-radius:3px;writing-mode:vertical-rl">ファイルツリー</span>
+    <span style="position:absolute;top:22%;right:18%;font-size:.72rem;font-weight:700;color:var(--blue);background:rgba(255,255,255,.9);padding:2px 8px;border-radius:3px">エディタ領域</span>
+    <span style="position:absolute;bottom:18%;right:18%;font-size:.72rem;font-weight:700;color:#E0E0E0;background:rgba(45,45,45,.9);padding:2px 8px;border-radius:3px">ターミナル（Claude Code）</span>
+  </div>
 
   <div class="card-grid">
     <div class="card">

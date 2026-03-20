@@ -176,7 +176,9 @@ a:hover{opacity:.8}
 .tool-icon-circle{
   width:40px;height:40px;border-radius:10px;
   display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  overflow:hidden;
 }
+.tool-icon-circle img{width:100%;height:100%;object-fit:contain;border-radius:10px}
 .tool-card h4{font-size:.88rem;font-weight:700;line-height:1.3}
 .tool-card p{font-size:.75rem;color:var(--gray-500);margin-top:2px}
 
@@ -260,12 +262,12 @@ a:hover{opacity:.8}
       <thead><tr><th>時間</th><th>区分</th><th>形式</th><th>内容</th></tr></thead>
       <tbody>
         <tr><td>13:00 - 13:20</td><td><a href="session1.html">Session 1</a></td><td><span class="tag tag-lecture">座学</span></td><td>AI駆動開発入門 ── ゴール共有とAI駆動開発の全体像</td></tr>
-        <tr><td>13:20 - 14:20</td><td><a href="session2.html">Session 2</a></td><td><span class="tag tag-handson">実践</span></td><td>環境構築ハンズオン ── VSCode・Node.js・Claude Codeのセットアップ</td></tr>
-        <tr class="break"><td>14:20 - 14:30</td><td>休憩</td><td>-</td><td></td></tr>
-        <tr><td>14:30 - 15:10</td><td><a href="session3.html">Session 3</a></td><td><span class="tag tag-handson">実践</span></td><td>ミニ業務アプリ開発 ── チェックリストアプリでClaude Codeに慣れる</td></tr>
-        <tr><td>15:10 - 16:20</td><td><a href="session4.html">Session 4</a></td><td><span class="tag tag-handson">実践</span></td><td>PDF文書比較ツール ── サーバー＋AI APIを使った本格アプリの構築</td></tr>
-        <tr class="break"><td>16:20 - 16:30</td><td>休憩</td><td>-</td><td></td></tr>
-        <tr><td>16:30 - 17:00</td><td><a href="session5.html">Session 5</a></td><td><span class="tag tag-lecture">座学</span></td><td>まとめ＆ネクストステップ ── 振り返り・継続学習・質疑応答</td></tr>
+        <tr><td>13:20 - 13:50</td><td><a href="session2.html">Session 2</a></td><td><span class="tag tag-handson">実践</span></td><td>環境構築ハンズオン ── Node.js・Claude Codeのセットアップ</td></tr>
+        <tr class="break"><td>13:50 - 14:00</td><td>休憩</td><td>-</td><td></td></tr>
+        <tr><td>14:00 - 14:50</td><td><a href="session3.html">Session 3</a></td><td><span class="tag tag-handson">実践</span></td><td>ミニ業務アプリ開発 ── チェックリストアプリでClaude Codeに慣れる</td></tr>
+        <tr><td>14:50 - 16:10</td><td><a href="session4.html">Session 4</a></td><td><span class="tag tag-handson">実践</span></td><td>PDF文書比較ツール ── サーバー＋AI APIを使った本格アプリの構築</td></tr>
+        <tr class="break"><td>16:10 - 16:20</td><td>休憩</td><td>-</td><td></td></tr>
+        <tr><td>16:20 - 17:00</td><td><a href="session5.html">Session 5</a></td><td><span class="tag tag-lecture">座学</span></td><td>生成AI資格ガイド ── 生成AIパスポートと資格ロードマップ</td></tr>
       </tbody>
     </table>
   </div>
@@ -292,9 +294,9 @@ a:hover{opacity:.8}
     <div class="session-card">
       <div class="session-num">SESSION 02</div>
       <h2>環境構築ハンズオン</h2>
-      <p class="session-card-desc">VSCode、Node.js、Claude Codeをインストールし、ターミナルの基本操作を覚えます。全員が同じ状態になるまでしっかり時間を取ります。</p>
+      <p class="session-card-desc">Node.jsとClaude Codeをインストールし、ターミナルの基本操作を覚えます。VSCodeは事前インストール済みの前提で進めます。</p>
       <div class="session-card-meta">
-        <span>60分</span>
+        <span>30分</span>
         <span>実践</span>
       </div>
       <a href="session2.html" class="session-card-btn">
@@ -308,7 +310,7 @@ a:hover{opacity:.8}
       <h2>ミニ業務アプリ開発</h2>
       <p class="session-card-desc">Claude Codeに要件を伝えて業務アプリを作る初体験です。設備点検チェックリストの開発を通じ、プロンプトの書き方と改善サイクルを身につけます。</p>
       <div class="session-card-meta">
-        <span>40分</span>
+        <span>50分</span>
         <span>実践</span>
       </div>
       <a href="session3.html" class="session-card-btn">
@@ -320,9 +322,9 @@ a:hover{opacity:.8}
     <div class="session-card">
       <div class="session-num">SESSION 04</div>
       <h2>PDF文書比較ツール</h2>
-      <p class="session-card-desc">本日の最終成果物です。サーバーとClaude APIを使った本格アプリをセットアップし、動かし、Claude Codeでカスタマイズします。</p>
+      <p class="session-card-desc">講師デモを見た後、自分のプロンプトでPDF比較ツールをゼロから開発します。プロンプト設計力が試される実践セッションです。</p>
       <div class="session-card-meta">
-        <span>70分</span>
+        <span>80分</span>
         <span>実践</span>
       </div>
       <a href="session4.html" class="session-card-btn">
@@ -333,10 +335,10 @@ a:hover{opacity:.8}
 
     <div class="session-card">
       <div class="session-num">SESSION 05</div>
-      <h2>まとめ＆<br>ネクストステップ</h2>
-      <p class="session-card-desc">本日の学びを整理し、作ったアプリを社内で活用するまでの道筋を確認します。継続学習のためのリソースも紹介します。</p>
+      <h2>生成AI<br>資格ガイド</h2>
+      <p class="session-card-desc">生成AIパスポートを起点に、キャリア方向に合った資格を7方向15資格から選ぶロードマップをご紹介します。</p>
       <div class="session-card-meta">
-        <span>30分</span>
+        <span>40分</span>
         <span>座学</span>
       </div>
       <a href="session5.html" class="session-card-btn outline">
@@ -352,8 +354,8 @@ a:hover{opacity:.8}
   <div class="tools-title">使用ツール</div>
   <div class="tools-grid">
     <div class="tool-card">
-      <div class="tool-icon-circle" style="background:#2180FF">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+      <div class="tool-icon-circle">
+        <img src="icons/vscode.png" alt="VSCode">
       </div>
       <div>
         <h4>VSCode</h4>
@@ -361,8 +363,8 @@ a:hover{opacity:.8}
       </div>
     </div>
     <div class="tool-card">
-      <div class="tool-icon-circle" style="background:#D4A574">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      <div class="tool-icon-circle">
+        <img src="icons/claude.png" alt="Claude Code">
       </div>
       <div>
         <h4>Claude Code</h4>
@@ -370,8 +372,8 @@ a:hover{opacity:.8}
       </div>
     </div>
     <div class="tool-card">
-      <div class="tool-icon-circle" style="background:#68A063">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2v20M2 12h20"/></svg>
+      <div class="tool-icon-circle">
+        <img src="icons/nodejs.png" alt="Node.js">
       </div>
       <div>
         <h4>Node.js</h4>
@@ -379,8 +381,8 @@ a:hover{opacity:.8}
       </div>
     </div>
     <div class="tool-card">
-      <div class="tool-icon-circle" style="background:var(--dark)">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="16" y1="2" x2="16" y2="6"/><path d="M7 12h3l2-4 2 8 2-4h3"/></svg>
+      <div class="tool-icon-circle">
+        <img src="icons/chrome.png" alt="Chrome">
       </div>
       <div>
         <h4>ブラウザ</h4>
