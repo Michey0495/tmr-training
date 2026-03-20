@@ -52,6 +52,7 @@ a{color:var(--blue);text-decoration:none;transition:opacity .2s}a:hover{opacity:
 .callout{background:var(--blue-bg);border-left:4px solid var(--blue);border-radius:0 var(--radius) var(--radius) 0;padding:20px 24px;margin:24px 0}
 .callout-title{font-size:.88rem;font-weight:700;color:var(--blue-dark);margin-bottom:6px}
 .callout p{font-size:.88rem;color:var(--gray-700);line-height:1.75}
+.callout-sec{background:rgba(198,40,40,.05);border-left-color:#C62828}.callout-sec .callout-title{color:#C62828}
 .h-flow{display:flex;align-items:center;gap:0;justify-content:center;flex-wrap:wrap;margin:16px 0}
 .h-flow .box{background:var(--gray-100);border:1px solid var(--gray-300);border-radius:6px;padding:10px 16px;font-size:.78rem;font-weight:600;text-align:center;min-width:100px;line-height:1.4}
 .h-flow .box.accent{background:var(--dark);color:var(--white);border-color:var(--dark)}
@@ -218,6 +219,11 @@ a{color:var(--blue);text-decoration:none;transition:opacity .2s}a:hover{opacity:
       <h3>コードを説明する</h3>
       <p>「このファイルは何をしているの？」と聞けば、コードの内容を日本語で解説してくれます。学習ツールとしても優秀です。</p>
     </div>
+  </div>
+
+  <div class="callout callout-sec">
+    <div class="callout-title">Security Tips ── AI生成コードのレビュー責任</div>
+    <p>Claude Codeが書いたコードは、正しく動くとは限りません。セキュリティの穴が含まれていたり、意図しない外部通信を行ったりする可能性があります。AIが生成したコードであっても、最終的な品質判断は人間の責任です。「AIが書いたから大丈夫」ではなく、動作を確認し、疑問があれば質問する姿勢を持ってください。</p>
   </div>
 
   <div class="callout">

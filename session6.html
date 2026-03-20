@@ -15,6 +15,7 @@ html{font-size:16px;scroll-behavior:smooth}body{font-family:var(--font-sans);col
 .card-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:20px;margin-bottom:20px}.card{background:var(--white);border:1px solid var(--gray-100);border-radius:var(--radius);padding:28px 24px;transition:box-shadow .2s}.card:hover{box-shadow:var(--shadow)}.card-num{font-size:.68rem;font-weight:800;color:var(--blue);letter-spacing:.1em;margin-bottom:6px}.card h3{font-size:1rem;font-weight:700;margin-bottom:10px;color:var(--dark)}.card p{font-size:.86rem;color:var(--gray-700);line-height:1.75;margin-bottom:10px}.card ul{padding-left:1.2em;margin-bottom:10px}.card li{font-size:.84rem;color:var(--gray-700);line-height:1.7;margin-bottom:3px}
 .callout{background:var(--blue-bg);border-left:4px solid var(--blue);border-radius:0 var(--radius) var(--radius) 0;padding:20px 24px;margin:24px 0}.callout-title{font-size:.88rem;font-weight:700;color:var(--blue-dark);margin-bottom:6px}.callout p{font-size:.88rem;color:var(--gray-700);line-height:1.75}
 .callout-warn{background:#FFFBF0;border-left-color:#D4A017}.callout-warn .callout-title{color:#8B6914}
+.callout-sec{background:rgba(198,40,40,.05);border-left-color:#C62828}.callout-sec .callout-title{color:#C62828}
 .disc{background:var(--gray-100);border:1px solid var(--gray-300);border-radius:var(--radius);padding:24px 28px;margin:24px 0}.disc-label{font-size:.72rem;font-weight:800;color:var(--gray-500);letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px}.disc h3{font-size:1rem;font-weight:700;margin-bottom:10px;color:var(--dark)}.disc p,.disc li{font-size:.88rem;color:var(--gray-700);line-height:1.7}.disc ol,.disc ul{padding-left:1.4em;margin-top:10px}.disc li{margin-bottom:4px}
 .flow{margin:24px 0;padding-left:32px;position:relative}.flow::before{content:'';position:absolute;left:11px;top:10px;bottom:10px;width:2px;background:var(--gray-300)}.flow-step{position:relative;padding:12px 0 12px 22px}.flow-step::before{content:'';position:absolute;left:-25px;top:18px;width:12px;height:12px;border-radius:50%;background:var(--white);border:2.5px solid var(--blue)}.flow-step.is-end::before{background:var(--blue);border-color:var(--blue)}.flow-step-label{font-size:.88rem;font-weight:700;color:var(--dark);margin-bottom:3px}.flow-step-desc{font-size:.84rem;color:var(--gray-700);line-height:1.6}
 .code-block{background:var(--gray-900);color:#E0E0E0;font-family:var(--font-mono);font-size:.82rem;line-height:1.7;padding:20px 24px;border-radius:var(--radius);overflow-x:auto;margin:16px 0;white-space:pre}.code-block .cm{color:#6A9955}
@@ -55,6 +56,11 @@ html{font-size:16px;scroll-behavior:smooth}body{font-family:var(--font-sans);col
     <div class="box highlight">3. 動作確認</div>
     <div class="arr">&#8594;</div>
     <div class="box accent">繰り返す</div>
+  </div>
+
+  <div class="callout callout-sec">
+    <div class="callout-title">Security Tips ── 開発中に気をつけること</div>
+    <p>自由開発ではAPIキーを扱う場面が出てきます。3つのポイントを守ってください。(1) APIキーはコードに直接書かず、.env ファイルで管理する。(2) スクリーンショットや画面共有でAPIキーが映り込まないよう注意する。(3) デモ用のサンプルデータに本物の個人情報や社外秘情報を使わない。発表時のスクリーンショットにも同じ配慮が必要です。</p>
   </div>
 
   <div class="flow">
