@@ -350,6 +350,63 @@ a{color:var(--blue);text-decoration:none;transition:opacity .2s}a:hover{opacity:
 </section>
 
 
+<!-- ====== Tips: アプリ公開 ====== -->
+<section class="section" id="tips-deploy">
+  <div class="section-label">TIPS</div>
+  <div class="section-title">作成したアプリを社内で共有・公開するには</div>
+
+  <div class="callout" style="border-left-color:var(--gray-500);background:rgba(0,0,0,.025)">
+    <div class="callout-title" style="color:var(--gray-700)">ご注意</div>
+    <p>ここでご紹介する内容は、あくまで一般的な情報です。そのまま手順通りに実施すれば社内公開できる、という趣旨ではありません。実際の導入にあたっては、社内のIT部門やセキュリティポリシーとの調整が必要になります。「こういう選択肢がある」という見取り図としてお読みください。</p>
+  </div>
+
+  <div class="topic">
+    <p>研修で作成したアプリは、現時点では自分のPCだけで動いています。これを同僚にも使ってもらうには、大きく3つの段階があります。</p>
+  </div>
+
+  <div class="pattern-grid">
+    <div class="pattern-card">
+      <div class="pattern-num">STEP 1</div>
+      <h3>ローカル実行のまま見せる</h3>
+      <div class="step"><span class="step-label">方法</span><span class="step-text">自分のPCでサーバーを起動し、画面共有やスクリーンショットで共有する</span></div>
+      <div class="step"><span class="step-label">利点</span><span class="step-text">追加の準備が不要。今日の研修内だけでも実現できる</span></div>
+      <div class="target">まず動いているものを見せたい、フィードバックをもらいたいという段階に適しています。</div>
+    </div>
+
+    <div class="pattern-card">
+      <div class="pattern-num">STEP 2</div>
+      <h3>社内ネットワークで共有する</h3>
+      <div class="step"><span class="step-label">方法</span><span class="step-text">社内サーバーやイントラネット上にアプリを配置する</span></div>
+      <div class="step"><span class="step-label">例</span><span class="step-text">社内のWindows ServerにNode.jsをインストールして常時起動する、Docker化して社内環境にデプロイする、など</span></div>
+      <div class="target">チーム内で日常的に使いたい段階。IT部門との連携が必要になります。</div>
+    </div>
+
+    <div class="pattern-card">
+      <div class="pattern-num">STEP 3</div>
+      <h3>クラウドで公開する</h3>
+      <div class="step"><span class="step-label">方法</span><span class="step-text">AWS、Azure、Vercel等のクラウドサービスにデプロイする</span></div>
+      <div class="step"><span class="step-label">検討事項</span><span class="step-text">認証・アクセス制限、APIキー管理、利用コスト、データの保管場所に関するポリシー確認</span></div>
+      <div class="target">部門横断や外部パートナーとの共有を想定する場合。セキュリティ審査を含む正式なプロセスを経る形が一般的です。</div>
+    </div>
+  </div>
+
+  <div class="topic" style="margin-top:28px">
+    <div class="topic-title">共有時に気をつけたいこと</div>
+    <ul>
+      <li>APIキー（Anthropic APIキーなど）をコードに直接書かない。環境変数や社内のシークレット管理ツールを利用する</li>
+      <li>社外秘の文書や個人情報を扱う場合、外部APIへの送信内容がセキュリティポリシーに適合するか確認する</li>
+      <li>利用者が増えるとAPI呼び出し量とコストが増加する。利用量の上限設定や課金体制を事前に整理しておく</li>
+      <li>「誰がアクセスできるか」の範囲を明確にする。社内限定であっても認証の仕組みは入れておくのが望ましい</li>
+    </ul>
+  </div>
+
+  <div class="callout">
+    <div class="callout-title">まずはSTEP 1から</div>
+    <p>今日の研修で作ったアプリは、まずは画面共有で同僚に見せるところから始めてみてください。「AI駆動開発でこんなものが作れる」と伝えるだけでも、チーム内のAI活用への関心を高めるきっかけになります。本格的な社内展開を検討する際は、IT部門と相談しながら進めていただければと思います。</p>
+  </div>
+</section>
+
+
 <section class="quiz-section" id="quiz">
   <div class="section-label">COMPREHENSION CHECK</div>
   <div class="section-title">理解度チェック</div>
