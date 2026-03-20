@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Session 5: まとめ＆ネクストステップ | VSCode × Claude Code 実践ハンズオン</title>
+<title>Session 5: 生成AI資格ガイド | VSCode × Claude Code 実践ハンズオン</title>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -16,7 +16,7 @@
 html{font-size:16px;scroll-behavior:smooth}
 body{font-family:var(--font-sans);color:var(--dark);background:var(--white);line-height:1.8;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column}
 a{color:var(--blue);text-decoration:none;transition:opacity .2s}a:hover{opacity:.7}
-.site-header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--gray-100);padding:14px 24px}
+.site-header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--gray-100);padding:14px 24px}
 .header-inner{max-width:var(--max-w);margin:0 auto;display:flex;align-items:center;justify-content:space-between}
 .header-brand{font-size:.85rem;font-weight:700;color:var(--gray-700);letter-spacing:.04em;text-decoration:none}.header-brand span{color:var(--blue)}
 .header-nav{display:flex;align-items:center;gap:14px}.header-nav a{font-size:.78rem;font-weight:600;color:var(--gray-700)}.header-nav a:hover{color:var(--blue);opacity:1}
@@ -36,21 +36,31 @@ a{color:var(--blue);text-decoration:none;transition:opacity .2s}a:hover{opacity:
 .card-num{font-size:.68rem;font-weight:800;color:var(--blue);letter-spacing:.1em;margin-bottom:6px}
 .card h3{font-size:1rem;font-weight:700;margin-bottom:10px;color:var(--dark)}.card p{font-size:.86rem;color:var(--gray-700);line-height:1.75;margin-bottom:10px}
 .card ul{padding-left:1.2em;margin-bottom:10px}.card li{font-size:.84rem;color:var(--gray-700);line-height:1.7;margin-bottom:3px}
+.card-accent{background:var(--blue-light);border:1px solid rgba(33,128,255,.1);border-radius:var(--radius);padding:28px 24px}
+.card-accent h3{font-size:1rem;font-weight:700;margin-bottom:12px;color:var(--blue-dark)}
+.card-accent p{font-size:.86rem;color:var(--gray-700);line-height:1.75;margin-bottom:10px}
+.card-accent ul{padding-left:1.2em;margin-bottom:10px}.card-accent li{font-size:.84rem;color:var(--gray-700);line-height:1.7;margin-bottom:3px}
 .callout{background:var(--blue-bg);border-left:4px solid var(--blue);border-radius:0 var(--radius) var(--radius) 0;padding:20px 24px;margin:24px 0}
 .callout-title{font-size:.88rem;font-weight:700;color:var(--blue-dark);margin-bottom:6px}.callout p{font-size:.88rem;color:var(--gray-700);line-height:1.75}
-.disc{background:var(--gray-100);border:1px solid var(--gray-300);border-radius:var(--radius);padding:24px 28px;margin:24px 0}.disc-label{font-size:.72rem;font-weight:800;color:var(--gray-500);letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px}.disc h3{font-size:1rem;font-weight:700;margin-bottom:10px;color:var(--dark)}.disc p,.disc li{font-size:.88rem;color:var(--gray-700);line-height:1.7}.disc ol,.disc ul{padding-left:1.4em;margin-top:10px}.disc li{margin-bottom:4px}
-.h-flow{display:flex;align-items:center;gap:0;justify-content:center;flex-wrap:wrap;margin:16px 0}
-.h-flow .box{background:var(--gray-100);border:1px solid var(--gray-300);border-radius:6px;padding:10px 16px;font-size:.78rem;font-weight:600;text-align:center;min-width:100px;line-height:1.4}
-.h-flow .box.accent{background:var(--dark);color:var(--white);border-color:var(--dark)}
-.h-flow .box.highlight{background:var(--blue-light);border-color:var(--blue);color:var(--blue-dark)}
-.h-flow .arr{font-size:.9rem;color:var(--gray-300);padding:0 6px;flex-shrink:0}
-.term{position:relative;border-bottom:1.5px dashed var(--blue);cursor:help}
-.term:hover::after{content:attr(data-def);position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);background:var(--dark);color:var(--white);font-size:.75rem;font-weight:400;padding:8px 14px;border-radius:6px;max-width:320px;white-space:normal;z-index:10;line-height:1.5;box-shadow:0 4px 12px rgba(0,0,0,.15)}
-.reveal-wrap{margin:16px 0}.reveal-btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-sans);font-size:.84rem;font-weight:700;color:var(--blue);background:var(--white);border:1.5px solid var(--blue);padding:8px 18px;border-radius:4px;cursor:pointer;transition:background .2s}.reveal-btn:hover{background:var(--blue-bg)}.reveal-btn svg{width:14px;height:14px;transition:transform .2s}.reveal-wrap.is-open .reveal-btn svg{transform:rotate(180deg)}.reveal-content{display:none;margin-top:14px;padding:20px 24px;background:var(--gray-100);border-radius:var(--radius);font-size:.88rem;color:var(--gray-700);line-height:1.8}.reveal-wrap.is-open .reveal-content{display:block}.reveal-content ul,.reveal-content ol{padding-left:1.3em;margin:8px 0}.reveal-content li{margin-bottom:4px}
+.tbl-wrap{overflow-x:auto;margin:20px 0;border:1px solid var(--gray-100);border-radius:var(--radius)}
+.tbl-wrap table{width:100%;border-collapse:collapse;font-size:.82rem}
+.tbl-wrap th{background:var(--dark);font-weight:700;text-align:left;padding:10px 14px;color:var(--white);border-bottom:1px solid var(--gray-300);white-space:nowrap}
+.tbl-wrap td{padding:10px 14px;color:var(--gray-700);border-bottom:1px solid var(--gray-100);vertical-align:top}
+.tbl-wrap tr:last-child td{border-bottom:none}.tbl-wrap tr:nth-child(even) td{background:rgba(0,0,0,.015)}
+.dir-label{display:inline-block;font-size:.72rem;font-weight:800;color:var(--white);background:var(--dark);padding:3px 12px;border-radius:3px;letter-spacing:.06em;margin-bottom:12px}
+.pattern-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;margin-top:24px}
+.pattern-card{border:1px solid var(--gray-100);border-radius:var(--radius);padding:28px 24px;transition:box-shadow .2s}.pattern-card:hover{box-shadow:var(--shadow)}
+.pattern-num{font-size:.68rem;font-weight:800;color:var(--blue);letter-spacing:.1em;margin-bottom:4px}
+.pattern-card h3{font-size:.95rem;font-weight:700;margin-bottom:10px;color:var(--dark)}
+.pattern-card .step{display:flex;align-items:flex-start;gap:8px;margin-bottom:8px}
+.pattern-card .step-label{font-size:.72rem;font-weight:800;color:var(--blue);background:var(--blue-bg);padding:1px 8px;border-radius:3px;flex-shrink:0;margin-top:2px}
+.pattern-card .step-text{font-size:.82rem;color:var(--gray-700);line-height:1.6}
+.pattern-card .target{font-size:.78rem;color:var(--gray-500);margin-top:12px;padding-top:8px;border-top:1px solid var(--gray-100)}
 .ref-section{margin-top:24px;padding-top:16px;border-top:1px solid var(--gray-100)}
 .ref-title{font-size:.72rem;font-weight:700;color:var(--gray-500);letter-spacing:.06em;margin-bottom:8px}
-.ref-link{display:inline-block;font-size:.75rem;font-weight:600;color:var(--gray-700);background:var(--gray-100);padding:4px 12px;border-radius:4px;margin:0 6px 6px 0;border:1px solid var(--gray-300);transition:all .15s;text-decoration:none}
-.ref-link:hover{background:var(--blue-bg);color:var(--blue);border-color:var(--blue);opacity:1}
+.ref-link{display:inline-block;font-size:.75rem;font-weight:600;color:var(--gray-700);background:var(--gray-100);padding:4px 12px;border-radius:4px;margin:0 6px 6px 0;border:1px solid var(--gray-300);transition:all .15s;text-decoration:none}.ref-link:hover{background:var(--blue-bg);color:var(--blue);border-color:var(--blue);opacity:1}
+.site-footer{margin-top:auto;max-width:var(--max-w);margin-left:auto;margin-right:auto;width:100%;padding:40px 24px;border-top:1px solid var(--gray-100);text-align:center;font-size:.78rem;color:var(--gray-500)}
+.footer-links{display:flex;justify-content:center;gap:16px;margin-bottom:12px;flex-wrap:wrap}.footer-links a{font-weight:600;font-size:.78rem}
 .quiz-section{max-width:var(--max-w);margin:0 auto;padding:60px 24px 48px;border-top:1px solid var(--gray-100)}
 .quiz-start-btn{display:block;margin:0 auto 32px;font-family:var(--font-sans);font-size:.92rem;font-weight:700;color:var(--white);background:var(--blue);border:none;padding:14px 40px;border-radius:6px;cursor:pointer;transition:opacity .2s}.quiz-start-btn:hover{opacity:.85}.quiz-start-btn:disabled{opacity:.5;cursor:default}
 .quiz-questions{display:none}.quiz-questions.is-visible{display:block}
@@ -66,10 +76,8 @@ a{color:var(--blue);text-decoration:none;transition:opacity .2s}a:hover{opacity:
 .quiz-choice-text{flex:1}
 .quiz-explanation{display:none;margin-top:8px;font-size:.82rem;line-height:1.65;color:var(--gray-500)}
 .quiz-explanation.is-visible{display:block}
-.site-footer{margin-top:auto;max-width:var(--max-w);margin-left:auto;margin-right:auto;width:100%;padding:40px 24px;border-top:1px solid var(--gray-100);text-align:center;font-size:.78rem;color:var(--gray-500)}
-.footer-links{display:flex;justify-content:center;gap:16px;margin-bottom:12px;flex-wrap:wrap}.footer-links a{font-weight:600;font-size:.78rem}
-@media(max-width:640px){.hero h1{font-size:1.5rem}.hero-meta{flex-direction:column;align-items:center;gap:12px}.card-grid{grid-template-columns:1fr}.section-title{font-size:1.1rem}.hero{padding:80px 20px 48px}.section{padding:48px 20px 36px}.h-flow{flex-direction:column;gap:4px;align-items:stretch}.h-flow .box{min-width:auto;width:100%}.h-flow .arr{transform:rotate(90deg);text-align:center;padding:2px 0}}
-@media print{.site-header{position:static}.reveal-btn{display:none!important}.reveal-content{display:block!important}.quiz-start-btn{display:none!important}.quiz-questions{display:block!important}.card:hover{box-shadow:none}.section{page-break-inside:avoid}.hero{padding-top:40px}body{font-size:14px}}
+@media(max-width:640px){.hero h1{font-size:1.5rem}.hero-meta{flex-direction:column;align-items:center;gap:12px}.card-grid{grid-template-columns:1fr}.pattern-grid{grid-template-columns:1fr}.section-title{font-size:1.1rem}.header-nav{gap:10px}.hero{padding:80px 20px 48px}.section{padding:48px 20px 36px}.tbl-wrap{font-size:.76rem}}
+@media print{.site-header{position:static;backdrop-filter:none}.card:hover,.pattern-card:hover{box-shadow:none}.section{page-break-inside:avoid}.hero{padding-top:40px}body{font-size:14px}.quiz-start-btn{display:none!important}.quiz-questions{display:block!important}}
 </style>
 </head>
 <body>
@@ -89,8 +97,8 @@ a{color:var(--blue);text-decoration:none;transition:opacity .2s}a:hover{opacity:
 
 <div class="hero">
   <div class="hero-badge">SESSION 05</div>
-  <h1>まとめ＆<em>ネクストステップ</em></h1>
-  <p class="hero-sub">本日の体験を振り返り、作ったアプリを社内で活用するまでの道筋と、学び続けるためのリソースを確認します。</p>
+  <h1>生成AI<em>資格ガイド</em></h1>
+  <p class="hero-sub">生成AIを業務で活用していく上で、リテラシーを体系的に証明できる資格をご紹介します。まずは「生成AIパスポート」の取得がおすすめです。その先のキャリア方向に合った資格も確認しましょう。</p>
   <div class="hero-meta">
     <div class="hero-meta-item">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
@@ -104,188 +112,240 @@ a{color:var(--blue);text-decoration:none;transition:opacity .2s}a:hover{opacity:
 </div>
 
 
-<section class="section" id="review">
-  <div class="section-label">REVIEW</div>
-  <div class="section-title">本日やったこと</div>
-
-  <div class="card-grid">
-    <div class="card">
-      <div class="card-num">SESSION 01</div>
-      <h3>AI駆動開発入門</h3>
-      <p>従来の開発、AI支援開発、AI駆動開発の3段階を理解しました。コードを書く代わりに日本語で指示を出す、という発想の転換がポイントです。</p>
-    </div>
-    <div class="card">
-      <div class="card-num">SESSION 02</div>
-      <h3>環境構築</h3>
-      <p>Node.jsとClaude Codeをセットアップし、ターミナルの基本操作（cd / ls / mkdir）を覚えました。30分で開発環境が整っています。</p>
-    </div>
-    <div class="card">
-      <div class="card-num">SESSION 03</div>
-      <h3>ミニ業務アプリ</h3>
-      <p>設備点検チェックリストを Claude Code で開発しました。「具体的に / 一度にひとつ / 結果を確認」の3原則を体験済みです。</p>
-    </div>
-    <div class="card">
-      <div class="card-num">SESSION 04</div>
-      <h3>PDF文書比較ツール</h3>
-      <p>サーバーとClaude APIを使った本格アプリをセットアップし、カスタマイズしました。HTML単体のアプリからサーバー構成のアプリへのステップアップを体験しています。</p>
-    </div>
-  </div>
+<!-- ====== 導入 ====== -->
+<section class="section" id="intro">
+  <div class="section-label">INTRODUCTION / 10 MIN</div>
+  <div class="section-title">まずは「生成AIパスポート」から</div>
 
   <div class="topic">
-    <div class="topic-title">身についたスキル</div>
-    <ul>
-      <li>VSCodeとターミナルを使った基本的な開発ワークフロー</li>
-      <li>Claude Codeに要件を伝えてアプリを生成する手順</li>
-      <li>プロンプトの3原則: 具体的に / 一度にひとつ / 結果を確認</li>
-      <li>要件定義: 「誰が」「何のために」「どんな機能を」を日本語で整理する力</li>
-      <li>npm / Express / APIキーなど、サーバーアプリの基本構成</li>
-      <li>エラーへの対処: Claude Codeにエラーメッセージを渡して修正を依頼する方法</li>
-    </ul>
-  </div>
-</section>
-
-
-<section class="section" id="share">
-  <div class="section-label">SHARING / 15 MIN</div>
-  <div class="section-title">プロンプトの振り返りと共有</div>
-
-  <div class="topic">
-    <p>うまくいったプロンプト、うまくいかなかったプロンプトをチーム内で共有してください。「こう書いたら一発で意図通りになった」「この書き方だと違うものが出てきた」など、具体的な体験が一番の学びになります。</p>
+    <p>本日の研修で体験した通り、生成AIは「使い方を知っている人」と「知らない人」の間で成果に大きな差が出ます。その「使い方を知っている」ことを客観的に証明する手段が資格です。</p>
+    <p>生成AI関連の資格は数多くありますが、最初の一歩としておすすめしたいのが「生成AIパスポート」です。</p>
   </div>
 
-  <div class="disc">
-    <div class="disc-label">DISCUSSION</div>
-    <h3>グループ共有の進め方</h3>
-    <ol>
-      <li>近くの席の方と2〜3人のグループを作ってください</li>
-      <li>1人2分程度で、今日使ったプロンプトの中で印象に残ったものを共有してください</li>
-      <li>以下の3つの観点で話すと整理しやすくなります</li>
-    </ol>
-    <ul>
-      <li>どんなプロンプトを書いたか</li>
-      <li>結果はどうだったか（意図通り / 想定外）</li>
-      <li>うまくいった理由 / いかなかった理由の仮説</li>
-    </ul>
-  </div>
-
-  <div class="topic">
-    <div class="topic-title">全体発表（5分）</div>
-    <p>各グループから1つ、印象的だったプロンプトの体験を全体に共有してください。</p>
-  </div>
-
-  <div class="callout">
-    <div class="callout-title">プロンプトの良し悪しに正解はありません</div>
-    <p>同じ目的でもプロンプトの書き方は人それぞれです。他の人の書き方を知ることで、自分のプロンプトの幅が広がります。</p>
-  </div>
-</section>
-
-
-<section class="section" id="qa">
-  <div class="section-label">Q&amp;A / 10 MIN</div>
-  <div class="section-title">質疑応答</div>
-
-  <div class="topic">
-    <p>研修全体を通じての疑問点、今後の活用に向けた質問を受け付けます。技術的な質問だけでなく、「自分の業務だとこういう場面で使えそうだけど、実現できるか」といった相談も歓迎です。</p>
-  </div>
-
-  <div class="callout">
-    <div class="callout-title">よくある質問</div>
-    <p>「研修後もClaude Codeは使えますか？」── 研修用アカウントは期間限定です。継続利用したい場合は個人プランまたは組織プランの契約が必要です。詳しくは講師にお尋ねください。</p>
-  </div>
-</section>
-
-
-<section class="section" id="deliver">
-  <div class="section-label">NEXT STEP</div>
-  <div class="section-title">作ったアプリを届けるには</div>
-
-  <div class="topic">
-    <p>Session 3のチェックリストはHTMLファイルをブラウザで直接開きました。Session 4のPDF比較ツールはlocalhostでサーバーを動かしました。どちらも「自分のPCだけで動く」状態です。同僚や部署の人にも使ってもらうには、段階を踏む必要があります。</p>
-  </div>
-
-  <div class="h-flow">
-    <div class="box highlight">STEP 1<br>ローカル実行<br><small>今日やったこと</small></div>
-    <div class="arr">&#8594;</div>
-    <div class="box">STEP 2<br>社内サーバー<br><small>共有フォルダ / IIS</small></div>
-    <div class="arr">&#8594;</div>
-    <div class="box accent">STEP 3<br>クラウド公開<br><small>AWS / Azure</small></div>
-  </div>
-
-  <div class="card-grid">
-    <div class="card">
-      <div class="card-num">STEP 1 ── 今日の状態</div>
-      <h3>ローカル実行</h3>
-      <p>HTMLファイルをブラウザで開く形式。自分のPC上でだけ動きます。プロトタイプの検証やアイデアの確認はこれで十分です。</p>
-    </div>
-    <div class="card">
-      <div class="card-num">STEP 2 ── 次にやれること</div>
-      <h3>社内共有</h3>
-      <p>社内の共有フォルダにHTMLファイルを置けば、同僚もブラウザで開けます。Windowsの場合はIIS（Webサーバー）を使う方法もあります。情報システム部門に相談してみてください。</p>
-    </div>
-  </div>
-
-  <div class="reveal-wrap">
-    <button class="reveal-btn">クラウドデプロイの全体像を見る <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
-    <div class="reveal-content">
-      <p>社外のユーザーにも公開したい、あるいは社内でも本格運用したい場合は、<span class="term" data-def="Amazon Web Services。世界最大のクラウドサービス。サーバー、データベース、ストレージなどをインターネット経由で利用できます。">AWS</span>や<span class="term" data-def="Microsoft社のクラウドサービス。Windows Server環境との親和性が高い。">Azure</span>にデプロイ（公開）する選択肢があります。</p>
-      <p>たとえばAWSの場合、<span class="term" data-def="AWS上でウェブアプリを簡単にデプロイ・管理できるサービス。サーバー構築の知識がなくても利用可能。">Elastic Beanstalk</span>や<span class="term" data-def="静的ファイル（HTML/CSS/JS）をホスティングするAWSのストレージサービス。サーバー不要で低コスト。">S3</span>を使えば、サーバー構築の知識がなくてもウェブアプリを公開できます。</p>
-      <p><span class="term" data-def="インフラ構成をコードとして記述・管理するHashiCorp社のツール。サーバーやネットワークの設定を再現可能な形で自動化できます。">Terraform</span>というツールを使えば、インフラの構築もコードで管理できます。Claude Codeに「AWSにデプロイするためのTerraformの設定を作って」と頼むことも可能です。</p>
-      <p>ただし、セキュリティやネットワーク設定は専門知識が必要です。社内のインフラ担当と連携して進めることを推奨します。</p>
+  <div class="card-accent" style="margin:24px 0">
+    <h3>生成AIパスポートとは</h3>
+    <p>一般社団法人生成AI活用普及協会（GUGA）が実施する、生成AIに関するリテラシーを問う検定試験です。AIを日常業務に活かすための最初の一歩として位置づけられています。</p>
+    <div class="tbl-wrap" style="margin-top:14px">
+      <table>
+        <thead><tr><th>項目</th><th>内容</th></tr></thead>
+        <tbody>
+          <tr><td>出題範囲</td><td>AIの基礎知識、生成AIの仕組み、プロンプト設計の基本、倫理・法的リスク、ビジネス活用</td></tr>
+          <tr><td>試験形式</td><td>オンライン / 多肢選択式 / 60問 / 60分</td></tr>
+          <tr><td>難易度</td><td>初級（IT未経験者でも合格可能）</td></tr>
+          <tr><td>受験費用</td><td>11,000円（税込）</td></tr>
+          <tr><td>合格基準</td><td>正答率70%以上</td></tr>
+        </tbody>
+      </table>
     </div>
   </div>
 
   <div class="callout">
-    <div class="callout-title">現実的な第一歩</div>
-    <p>チェックリストのようなHTML単体アプリなら、社内の共有フォルダに置くだけで同僚もブラウザで使えます。PDF比較ツールのようなサーバーアプリは、社内サーバーへの配置が必要ですが、動くプロトタイプを見せるだけでもデジタル化の議論が始まるきっかけになります。</p>
+    <div class="callout-title">本日の研修内容が直結します</div>
+    <p>今日体験した「プロンプト設計」「AI駆動開発」「APIの仕組み」は、生成AIパスポートの出題範囲と重なる部分が多くあります。研修の知識が新鮮なうちに受験していただくと、効率よく合格を目指せます。資格の取得を強制するものではございませんが、ぜひご検討ください。</p>
+  </div>
+
+  <div class="topic">
+    <p>生成AIパスポートを取得済みの方、あるいは取得後に「次は何を目指すか」を考えたい方のために、7つの方向性と15の資格を俯瞰してご紹介します。</p>
   </div>
 </section>
 
 
-<section class="section" id="resources">
-  <div class="section-label">RESOURCES</div>
-  <div class="section-title">継続学習のためのリソース</div>
+<!-- ====== 7方向 ====== -->
+<section class="section" id="directions">
+  <div class="section-label">7 DIRECTIONS / 20 MIN</div>
+  <div class="section-title">7つの方向性と15の資格</div>
 
-  <div class="card-grid">
-    <div class="card">
-      <h3>Claude Code 公式ドキュメント</h3>
-      <p>Claude Codeの全機能と使い方が詳しく解説されています。コマンド一覧やベストプラクティスも掲載されています。</p>
-      <a href="https://docs.anthropic.com/en/docs/claude-code/overview" target="_blank" rel="noopener" style="font-size:.84rem;font-weight:600">docs.anthropic.com</a>
-    </div>
-    <div class="card">
-      <h3>VSCode 公式チュートリアル</h3>
-      <p>VSCodeの基本操作から拡張機能の使い方まで、動画付きで学べる公式ガイドです。</p>
-      <a href="https://code.visualstudio.com/docs" target="_blank" rel="noopener" style="font-size:.84rem;font-weight:600">code.visualstudio.com/docs</a>
-    </div>
-    <div class="card">
-      <h3>Prompt Engineering Guide</h3>
-      <p>AIへの指示（プロンプト）の書き方を体系的に学べるサイトです。研修で学んだ3原則を深掘りできます。</p>
-      <a href="https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview" target="_blank" rel="noopener" style="font-size:.84rem;font-weight:600">Anthropic Prompt Engineering</a>
-    </div>
-    <div class="card">
-      <h3>MDN Web Docs</h3>
-      <p>HTML、CSS、JavaScriptの公式リファレンスです。Claude Codeが生成したコードの意味を調べたいときに役立ちます。</p>
-      <a href="https://developer.mozilla.org/ja/" target="_blank" rel="noopener" style="font-size:.84rem;font-weight:600">developer.mozilla.org</a>
-    </div>
+  <!-- A. AI活用リテラシー -->
+  <div class="topic">
+    <div class="dir-label">A</div>
+    <div class="topic-title">AI活用リテラシー ── AIの全体像を広く押さえたい人向け</div>
+    <p>生成AIパスポートと最も地続きの領域です。G検定は「AIの全体像を体系的に語れるようになる」資格で、ビジネス職や管理職の方に向いています。</p>
   </div>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>#</th><th>資格名</th><th>主催</th><th>概要</th><th>難易度</th><th>費用</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td><a href="https://www.jdla.org/certificate/general/" target="_blank" rel="noopener">G検定</a></td><td>JDLA</td><td>ディープラーニングを事業に活かす知識。累計受験者13万人超</td><td>中級</td><td>13,200円</td></tr>
+        <tr><td>2</td><td><a href="https://www.zentou.ai/" target="_blank" rel="noopener">全統AI</a></td><td>全統AI実行委</td><td>生成AIのビジネス活用力を測る全国統一試験</td><td>初~中</td><td>無料~低額</td></tr>
+        <tr><td>3</td><td><a href="https://www.sikaku.gr.jp/ai/" target="_blank" rel="noopener">AI検定</a></td><td>サーティファイ</td><td>AI基礎知識~ビジネス活用。50分30問リモートWebテスト</td><td>初級</td><td>4,400円</td></tr>
+        <tr><td>4</td><td><a href="https://www3.jitec.ipa.go.jp/JitesCbt/index.html" target="_blank" rel="noopener">ITパスポート</a></td><td>IPA</td><td>IT全般の国家試験。2021年からAI分野を大幅強化</td><td>初級</td><td>7,500円</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- B. プロンプト -->
+  <div class="topic">
+    <div class="dir-label">B</div>
+    <div class="topic-title">プロンプト・実務活用 ── 日々のAI活用スキルを証明したい人向け</div>
+    <p>生成AIパスポートの知識を「実務で使える形」に昇華する方向です。本日の研修で体験したプロンプト設計のスキルを、資格として証明できます。</p>
+  </div>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>#</th><th>資格名</th><th>主催</th><th>概要</th><th>難易度</th><th>費用</th></tr></thead>
+      <tbody>
+        <tr><td>5</td><td><a href="https://prompt.or.jp/pep" target="_blank" rel="noopener">PEP検定</a></td><td>プロンプトエンジニア協会</td><td>プロンプト設計の体系的知識と実践スキルを認定</td><td>中級</td><td>11,000円</td></tr>
+        <tr><td>6</td><td><a href="https://www.jdla.org/certificate/generativeai/" target="_blank" rel="noopener">JDLA Generative AI Test</a></td><td>JDLA</td><td>生成AIの理解度を測る20分ミニテスト。G検定への足がかり</td><td>初級</td><td>2,200円</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- C. データサイエンス -->
+  <div class="topic">
+    <div class="dir-label">C</div>
+    <div class="topic-title">データサイエンス ── データ分析の素養を固めたい人向け</div>
+    <p>AIが出す数値の妥当性をご自身で判断できるようになる方向です。統計検定2級はAI関連資格の中でも数理的な強度が頭一つ抜けており、データを扱う部門の方には特に有効です。</p>
+  </div>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>#</th><th>資格名</th><th>主催</th><th>概要</th><th>難易度</th><th>費用</th></tr></thead>
+      <tbody>
+        <tr><td>7</td><td><a href="https://www.datascientist.or.jp/" target="_blank" rel="noopener">DS検定</a></td><td>データサイエンティスト協会</td><td>ビジネス力・DS力・DE力の3軸。リテラシーレベルだが骨太</td><td>中級</td><td>10,000円</td></tr>
+        <tr><td>8</td><td><a href="https://www.toukei-kentei.jp/" target="_blank" rel="noopener">統計検定2級</a></td><td>統計質保証推進協会</td><td>大学基礎レベルの統計学。仮説検定・回帰分析・確率分布</td><td>中級</td><td>7,000円</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- D. AI開発 -->
+  <div class="topic">
+    <div class="dir-label">D</div>
+    <div class="topic-title">AI開発エンジニアリング ── AIを「作る側」に回りたい人向け</div>
+    <p>エンジニア職やR&amp;D部門の方が対象です。E資格は認定プログラム修了が必須のため学習コストは高くなりますが、AI開発人材としての市場価値は大きく上がります。</p>
+  </div>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>#</th><th>資格名</th><th>主催</th><th>概要</th><th>難易度</th><th>費用</th></tr></thead>
+      <tbody>
+        <tr><td>9</td><td><a href="https://www.jdla.org/certificate/engineer/" target="_blank" rel="noopener">E資格</a></td><td>JDLA</td><td>DL理論の理解と実装能力を認定。認定プログラム修了が受験要件</td><td>上級</td><td>33,000円</td></tr>
+        <tr><td>10</td><td><a href="https://kentei.ai/" target="_blank" rel="noopener">AI実装検定 A級</a></td><td>AI実装検定実行委</td><td>NN基礎構造の理解とPython実装力。E資格の手前のステップ</td><td>中級</td><td>14,850円</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- E. クラウドAI -->
+  <div class="topic">
+    <div class="dir-label">E</div>
+    <div class="topic-title">クラウドAI ── 自社のAI基盤構築に関わる人向け</div>
+    <p>自社でAWS/Azureを使っている場合、そのまま業務に直結します。どちらもFundamentalsレベルですので、開発経験がなくても合格圏に入ることができます。グローバルで通用する認定です。</p>
+  </div>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>#</th><th>資格名</th><th>主催</th><th>概要</th><th>難易度</th><th>費用</th></tr></thead>
+      <tbody>
+        <tr><td>11</td><td><a href="https://aws.amazon.com/certification/certified-ai-practitioner/" target="_blank" rel="noopener">AWS Certified AI Practitioner</a></td><td>AWS</td><td>2024年新設。AI・ML・生成AIの基本とAWSサービス活用</td><td>初~中</td><td>16,500円</td></tr>
+        <tr><td>12</td><td><a href="https://learn.microsoft.com/ja-jp/credentials/certifications/azure-ai-fundamentals/" target="_blank" rel="noopener">Azure AI Fundamentals (AI-900)</a></td><td>Microsoft</td><td>Azure上のAI・MLサービス基礎。無料バウチャーの機会あり</td><td>初級</td><td>13,200円</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- F. セキュリティ -->
+  <div class="topic">
+    <div class="dir-label">F</div>
+    <div class="topic-title">セキュリティ・ガバナンス ── AI活用の「守り」を固めたい人向け</div>
+    <p>生成AIを業務で使う以上、情報漏えいや不正利用のリスクは避けて通れません。AI活用を推進する立場の方が「守り」の基盤を持つ意味は大きいと考えます。</p>
+  </div>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>#</th><th>資格名</th><th>主催</th><th>概要</th><th>難易度</th><th>費用</th></tr></thead>
+      <tbody>
+        <tr><td>13</td><td><a href="https://www.ipa.go.jp/shiken/kubun/sg.html" target="_blank" rel="noopener">情報セキュリティマネジメント試験</a></td><td>IPA</td><td>ユーザー企業の情報管理担当者向け国家試験。CBT通年受験可</td><td>中級</td><td>7,500円</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- G. プログラミング -->
+  <div class="topic">
+    <div class="dir-label">G</div>
+    <div class="topic-title">プログラミング・開発 ── AI時代の開発スキルを武器にしたい人向け</div>
+    <p>本日の研修ではClaude Codeを使ってアプリを開発しました。コードを読み書きするスキルを正式に証明したい方向けの資格です。GitHub Copilot認定は2024年に新設された資格で、AIを開発ワークフローに組み込むスキルの証明として注目されています。</p>
+  </div>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>#</th><th>資格名</th><th>主催</th><th>概要</th><th>難易度</th><th>費用</th></tr></thead>
+      <tbody>
+        <tr><td>14</td><td><a href="https://cbt.odyssey-com.co.jp/pythonic-exam/" target="_blank" rel="noopener">Python 3 エンジニア認定試験</a></td><td>Pythonエンジニア育成推進協会</td><td>Python文法・ライブラリ知識を3段階で認定</td><td>初~中</td><td>各11,000円</td></tr>
+        <tr><td>15</td><td><a href="https://resources.github.com/ja/learn/certifications/" target="_blank" rel="noopener">GitHub認定資格</a></td><td>GitHub, Inc.</td><td>Foundations / Actions / Security / Admin / Copilotの5種</td><td>初~中</td><td>各$99</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+<!-- ====== 3パターン ====== -->
+<section class="section" id="patterns">
+  <div class="section-label">PROPOSAL / 5 MIN</div>
+  <div class="section-title">「次の一手」3パターン</div>
 
   <div class="topic">
-    <div class="topic-title">研修後に試してみたいアイデア</div>
-    <p>本日の体験を活かして、ぜひ身近な業務課題に取り組んでみてください。</p>
-    <ul>
-      <li>今日作ったPDF比較ツールの比較観点やプロンプトを自部門の文書に合わせて調整する</li>
-      <li>チェックリストを実際の業務の点検項目に差し替えて社内共有フォルダに置いてみる</li>
-      <li>AppForge（<a href="https://appforge-psl.ezoai.jp/" target="_blank" rel="noopener">appforge-psl.ezoai.jp</a>）に掲載されている30種類のアプリを参考に、別の業務アプリを作ってみる</li>
-      <li>CSVファイルを読み込んで表やグラフで表示するアプリに挑戦する</li>
-    </ul>
+    <p>キャリア志向に合わせて、生成AIパスポートの次に目指す資格を3パターンでご案内します。</p>
   </div>
 
-  <div class="ref-section">
-    <div class="ref-title">参考リンク</div>
-    <a href="https://docs.anthropic.com/en/docs/claude-code/overview" target="_blank" rel="noopener" class="ref-link">Claude Code 公式ドキュメント</a>
-    <a href="https://code.visualstudio.com/" target="_blank" rel="noopener" class="ref-link">VSCode ダウンロード</a>
-    <a href="https://nodejs.org/" target="_blank" rel="noopener" class="ref-link">Node.js 公式サイト</a>
-    <a href="https://developer.mozilla.org/ja/" target="_blank" rel="noopener" class="ref-link">MDN Web Docs</a>
-    <a href="https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview" target="_blank" rel="noopener" class="ref-link">Prompt Engineering Guide</a>
+  <div class="pattern-grid">
+    <div class="pattern-card">
+      <div class="pattern-num">PATTERN 01</div>
+      <h3>横に広げる</h3>
+      <div class="step"><span class="step-label">まず</span><span class="step-text">G検定 or ITパスポートで周辺知識を固める</span></div>
+      <div class="step"><span class="step-label">次に</span><span class="step-text">情報セキュリティマネジメント試験でガバナンス面をカバー</span></div>
+      <div class="target">非エンジニア・管理職の方におすすめです。「AIを推進する側」としての信頼性を組織内で確立できます。</div>
+    </div>
+
+    <div class="pattern-card">
+      <div class="pattern-num">PATTERN 02</div>
+      <h3>縦に深める</h3>
+      <div class="step"><span class="step-label">まず</span><span class="step-text">DS検定 or 統計検定2級で数理基盤を作る</span></div>
+      <div class="step"><span class="step-label">次に</span><span class="step-text">G検定 → E資格と段階的に進む</span></div>
+      <div class="target">技術職・データ分析職の方におすすめです。「使う」から「評価・設計できる」レベルへステップアップできます。</div>
+    </div>
+
+    <div class="pattern-card">
+      <div class="pattern-num">PATTERN 03</div>
+      <h3>実務に直結</h3>
+      <div class="step"><span class="step-label">まず</span><span class="step-text">PEP検定 or Generative AI Testで生成AI活用力を証明</span></div>
+      <div class="step"><span class="step-label">次に</span><span class="step-text">AWS AI Practitioner or Azure AI-900で自社クラウド環境のAI活用を学ぶ</span></div>
+      <div class="target">全職種の方におすすめです。「今の仕事」で使えるスキルを最短距離で証明できます。</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <div class="callout-title">まずは生成AIパスポートから</div>
+    <p>どのパターンを選ぶにしても、生成AIパスポートが出発点です。本日の研修内容と出題範囲が重なっているため、記憶が新しいうちの受験が効率的です。各資格の公式サイトURLは次のセクションにまとめています。</p>
+  </div>
+</section>
+
+
+<!-- ====== 参考リンク ====== -->
+<section class="section" id="refs">
+  <div class="section-label">REFERENCE</div>
+  <div class="section-title">資格公式サイト一覧</div>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>#</th><th>資格名</th><th>公式サイト</th></tr></thead>
+      <tbody>
+        <tr><td>0</td><td>生成AIパスポート</td><td><a href="https://guga.or.jp/outline/" target="_blank" rel="noopener">guga.or.jp/outline</a></td></tr>
+        <tr><td>1</td><td>G検定</td><td><a href="https://www.jdla.org/certificate/general/" target="_blank" rel="noopener">jdla.org/certificate/general</a></td></tr>
+        <tr><td>2</td><td>全統AI</td><td><a href="https://www.zentou.ai/" target="_blank" rel="noopener">zentou.ai</a></td></tr>
+        <tr><td>3</td><td>AI検定（サーティファイ）</td><td><a href="https://www.sikaku.gr.jp/ai/" target="_blank" rel="noopener">sikaku.gr.jp/ai</a></td></tr>
+        <tr><td>4</td><td>ITパスポート</td><td><a href="https://www3.jitec.ipa.go.jp/JitesCbt/index.html" target="_blank" rel="noopener">jitec.ipa.go.jp</a></td></tr>
+        <tr><td>5</td><td>PEP検定</td><td><a href="https://prompt.or.jp/pep" target="_blank" rel="noopener">prompt.or.jp/pep</a></td></tr>
+        <tr><td>6</td><td>JDLA Generative AI Test</td><td><a href="https://www.jdla.org/certificate/generativeai/" target="_blank" rel="noopener">jdla.org/certificate/generativeai</a></td></tr>
+        <tr><td>7</td><td>DS検定</td><td><a href="https://www.datascientist.or.jp/" target="_blank" rel="noopener">datascientist.or.jp</a></td></tr>
+        <tr><td>8</td><td>統計検定2級</td><td><a href="https://www.toukei-kentei.jp/" target="_blank" rel="noopener">toukei-kentei.jp</a></td></tr>
+        <tr><td>9</td><td>E資格</td><td><a href="https://www.jdla.org/certificate/engineer/" target="_blank" rel="noopener">jdla.org/certificate/engineer</a></td></tr>
+        <tr><td>10</td><td>AI実装検定 A級</td><td><a href="https://kentei.ai/" target="_blank" rel="noopener">kentei.ai</a></td></tr>
+        <tr><td>11</td><td>AWS Certified AI Practitioner</td><td><a href="https://aws.amazon.com/certification/certified-ai-practitioner/" target="_blank" rel="noopener">aws.amazon.com/certification</a></td></tr>
+        <tr><td>12</td><td>Azure AI Fundamentals</td><td><a href="https://learn.microsoft.com/ja-jp/credentials/certifications/azure-ai-fundamentals/" target="_blank" rel="noopener">learn.microsoft.com</a></td></tr>
+        <tr><td>13</td><td>情報セキュリティマネジメント試験</td><td><a href="https://www.ipa.go.jp/shiken/kubun/sg.html" target="_blank" rel="noopener">ipa.go.jp/shiken</a></td></tr>
+        <tr><td>14</td><td>Python 3 エンジニア認定試験</td><td><a href="https://cbt.odyssey-com.co.jp/pythonic-exam/" target="_blank" rel="noopener">odyssey-com.co.jp</a></td></tr>
+        <tr><td>15</td><td>GitHub認定資格</td><td><a href="https://resources.github.com/ja/learn/certifications/" target="_blank" rel="noopener">resources.github.com</a></td></tr>
+      </tbody>
+    </table>
   </div>
 </section>
 
@@ -297,55 +357,67 @@ a{color:var(--blue);text-decoration:none;transition:opacity .2s}a:hover{opacity:
   <div class="quiz-questions">
 
     <div class="quiz-q-block">
-      <div class="quiz-q-text">Q1. 今日作ったHTMLアプリを同僚に使ってもらう最も手軽な方法は</div>
+      <div class="quiz-q-text">Q1. 非エンジニアが生成AIパスポートの次に目指すべき推奨パターンは</div>
       <div class="quiz-choices">
         <div class="quiz-choice" data-correct="false">
           <span class="quiz-choice-label">A</span>
-          <span class="quiz-choice-text">AWSにサーバーを立ててデプロイする<span class="quiz-explanation">AWSへのデプロイは本格運用に向けた選択肢ですが、最も手軽な方法とは言えません。まずは社内共有フォルダの活用が現実的です。</span></span>
+          <span class="quiz-choice-text">E資格 → AI実装検定A級<span class="quiz-explanation">E資格は認定プログラム修了が必須の上級資格で、AI開発エンジニア向けです。非エンジニアには敷居が高すぎます。</span></span>
         </div>
         <div class="quiz-choice" data-correct="true">
           <span class="quiz-choice-label">B</span>
-          <span class="quiz-choice-text">社内の共有フォルダにHTMLファイルを置く<span class="quiz-explanation">正解です。HTMLファイルを共有フォルダに置けば、同僚がブラウザで直接開けます。追加のサーバー構築は不要です。</span></span>
+          <span class="quiz-choice-text">G検定 or ITパスポート → 情報セキュリティマネジメント試験<span class="quiz-explanation">正解です。パターン01「横に広げる」に該当します。G検定やITパスポートで周辺知識を固め、情報セキュリティマネジメント試験でガバナンス面をカバーする流れが、AI推進者としての信頼性確立に直結します。</span></span>
         </div>
         <div class="quiz-choice" data-correct="false">
           <span class="quiz-choice-label">C</span>
-          <span class="quiz-choice-text">スマートフォンアプリに変換する<span class="quiz-explanation">スマホアプリ化には追加の開発工程が必要です。まずはPC上のブラウザで共有することから始めてください。</span></span>
+          <span class="quiz-choice-text">Python 3 エンジニア認定試験 → GitHub認定資格<span class="quiz-explanation">プログラミング・開発方向の資格であり、コードを書く人向けです。非エンジニア向けではありません。</span></span>
+        </div>
+        <div class="quiz-choice" data-correct="false">
+          <span class="quiz-choice-label">D</span>
+          <span class="quiz-choice-text">統計検定2級 → DS検定<span class="quiz-explanation">データサイエンス方向の資格で、数理基盤を固める技術職向けのルートです。非エンジニアの最短ルートではありません。</span></span>
         </div>
       </div>
     </div>
 
     <div class="quiz-q-block">
-      <div class="quiz-q-text">Q2. プロンプトの3原則として正しい組み合わせはどれですか</div>
+      <div class="quiz-q-text">Q2. G検定の説明として正しいものはどれか</div>
       <div class="quiz-choices">
-        <div class="quiz-choice" data-correct="true">
-          <span class="quiz-choice-label">A</span>
-          <span class="quiz-choice-text">具体的に / 一度にひとつ / 結果を確認<span class="quiz-explanation">正解です。Session 3で学んだ3原則です。曖昧な指示を避け、1つずつ進め、毎回ブラウザで動作を確認する。この繰り返しがAI駆動開発の基本リズムになります。</span></span>
-        </div>
         <div class="quiz-choice" data-correct="false">
+          <span class="quiz-choice-label">A</span>
+          <span class="quiz-choice-text">AIの実装能力を認定するプログラミング試験<span class="quiz-explanation">それはE資格の説明です。G検定はプログラミングではなく、ディープラーニングを事業に活かすための知識を問う試験です。</span></span>
+        </div>
+        <div class="quiz-choice" data-correct="true">
           <span class="quiz-choice-label">B</span>
-          <span class="quiz-choice-text">短く書く / まとめて指示する / AIに任せる<span class="quiz-explanation">短い指示は曖昧になりがちです。まとめて指示すると問題の切り分けが難しくなります。結果は必ず人間の目で確認してください。</span></span>
+          <span class="quiz-choice-text">ディープラーニングを事業に活かす知識を問うJDLAの試験<span class="quiz-explanation">正解です。JDLAが主催するG検定は、AIの全体像を体系的に語れるようになる資格です。累計受験者13万人超で、ビジネス職や管理職に向いています。</span></span>
         </div>
         <div class="quiz-choice" data-correct="false">
           <span class="quiz-choice-label">C</span>
-          <span class="quiz-choice-text">英語で書く / 技術用語を使う / コードを添付する<span class="quiz-explanation">Claude Codeは日本語で指示を受け付けます。技術用語やコードの知識がなくても、日本語で具体的に伝えれば問題ありません。</span></span>
+          <span class="quiz-choice-text">Google Cloud のAIサービスに特化した認定試験<span class="quiz-explanation">G検定の「G」はGoogleではなくGeneral（ジェネラリスト）の意味です。特定のクラウドサービスに特化していません。</span></span>
+        </div>
+        <div class="quiz-choice" data-correct="false">
+          <span class="quiz-choice-label">D</span>
+          <span class="quiz-choice-text">政府が実施するAI国家試験<span class="quiz-explanation">G検定はJDLA（日本ディープラーニング協会）が主催する民間資格です。国家試験にはITパスポートや情報セキュリティマネジメント試験があります。</span></span>
         </div>
       </div>
     </div>
 
     <div class="quiz-q-block">
-      <div class="quiz-q-text">Q3. 研修後に学びを深めるために最も効果的なのは</div>
+      <div class="quiz-q-text">Q3. 2024年に新設され、生成AIを開発ワークフローに組み込むスキル証明として注目されている資格は</div>
       <div class="quiz-choices">
         <div class="quiz-choice" data-correct="false">
           <span class="quiz-choice-label">A</span>
-          <span class="quiz-choice-text">プログラミング言語の教科書を読む<span class="quiz-explanation">AI駆動開発では、プログラミング言語の文法を覚える必要はありません。それよりも、実際にアプリを作りながら学ぶほうが効率的です。</span></span>
-        </div>
-        <div class="quiz-choice" data-correct="true">
-          <span class="quiz-choice-label">B</span>
-          <span class="quiz-choice-text">身近な業務課題をテーマにClaude Codeでアプリを作ってみる<span class="quiz-explanation">正解です。今日学んだ流れ（要件整理 → プロンプト → 確認 → 改善）を繰り返すことで、自然とスキルが定着します。題材は自分の業務から選ぶのが一番です。</span></span>
+          <span class="quiz-choice-text">PEP検定<span class="quiz-explanation">PEP検定はプロンプト設計の体系的知識を認定する資格で、開発ワークフローへのAI統合とは焦点が異なります。</span></span>
         </div>
         <div class="quiz-choice" data-correct="false">
+          <span class="quiz-choice-label">B</span>
+          <span class="quiz-choice-text">AWS Certified AI Practitioner<span class="quiz-explanation">2024年新設ではありますが、AWS上のAI・MLサービス活用が対象です。開発ワークフローへの生成AI統合に特化した資格ではありません。</span></span>
+        </div>
+        <div class="quiz-choice" data-correct="true">
           <span class="quiz-choice-label">C</span>
-          <span class="quiz-choice-text">生成されたコードを1行ずつ暗記する<span class="quiz-explanation">コードの暗記は必要ありません。それよりも、どんな指示を出せばどんな結果が得られるか、プロンプトの感覚を磨くことに時間を使ってください。</span></span>
+          <span class="quiz-choice-text">GitHub Copilot認定資格<span class="quiz-explanation">正解です。GitHub認定資格の1つとして2024年に新設されました。AIペアプログラミングツールのCopilotを開発ワークフローに組み込むスキルを証明する資格として注目度が高まっています。</span></span>
+        </div>
+        <div class="quiz-choice" data-correct="false">
+          <span class="quiz-choice-label">D</span>
+          <span class="quiz-choice-text">JDLA Generative AI Test<span class="quiz-explanation">生成AIの理解度を測る20分のミニテストで、G検定への足がかりという位置づけです。開発ワークフローとの統合は対象外です。</span></span>
         </div>
       </div>
     </div>
@@ -366,10 +438,21 @@ a{color:var(--blue);text-decoration:none;transition:opacity .2s}a:hover{opacity:
 
 <script>
 (function(){
-document.querySelectorAll('.reveal-btn').forEach(function(b){b.addEventListener('click',function(){b.parentElement.classList.toggle('is-open');});});
-var sb=document.querySelector('.quiz-start-btn');var qs=document.querySelector('.quiz-questions');
+var sb=document.querySelector('.quiz-start-btn');
+var qs=document.querySelector('.quiz-questions');
 if(sb&&qs){sb.addEventListener('click',function(){qs.classList.add('is-visible');sb.disabled=true;sb.textContent='回答してください';});}
-document.querySelectorAll('.quiz-q-block').forEach(function(b){var cs=b.querySelectorAll('.quiz-choice');var done=false;cs.forEach(function(c){c.addEventListener('click',function(){if(done)return;done=true;cs.forEach(function(x){var exp=x.querySelector('.quiz-explanation');if(x.getAttribute('data-correct')==='true'){x.classList.add('is-correct');if(exp)exp.classList.add('is-visible');}else if(x===c){x.classList.add('is-wrong');if(exp)exp.classList.add('is-visible');}else{x.classList.add('is-dimmed');}});});});});
+document.querySelectorAll('.quiz-q-block').forEach(function(b){
+  var cs=b.querySelectorAll('.quiz-choice');var done=false;
+  cs.forEach(function(c){c.addEventListener('click',function(){
+    if(done)return;done=true;
+    cs.forEach(function(x){
+      var exp=x.querySelector('.quiz-explanation');
+      if(x.getAttribute('data-correct')==='true'){x.classList.add('is-correct');if(exp)exp.classList.add('is-visible');}
+      else if(x===c){x.classList.add('is-wrong');if(exp)exp.classList.add('is-visible');}
+      else{x.classList.add('is-dimmed');}
+    });
+  });});
+});
 })();
 </script>
 </body>

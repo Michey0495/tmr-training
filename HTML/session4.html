@@ -21,10 +21,10 @@ html{font-size:16px;scroll-behavior:smooth}body{font-family:var(--font-sans);col
 .term{position:relative;border-bottom:1.5px dashed var(--blue);cursor:help}.term:hover::after{content:attr(data-def);position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);background:var(--dark);color:var(--white);font-size:.75rem;font-weight:400;padding:8px 14px;border-radius:6px;max-width:320px;white-space:normal;z-index:10;line-height:1.5;box-shadow:0 4px 12px rgba(0,0,0,.15)}
 .reveal-wrap{margin:16px 0}.reveal-btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-sans);font-size:.84rem;font-weight:700;color:var(--blue);background:var(--white);border:1.5px solid var(--blue);padding:8px 18px;border-radius:4px;cursor:pointer;transition:background .2s}.reveal-btn:hover{background:var(--blue-bg)}.reveal-btn svg{width:14px;height:14px;transition:transform .2s}.reveal-wrap.is-open .reveal-btn svg{transform:rotate(180deg)}.reveal-content{display:none;margin-top:14px;padding:20px 24px;background:var(--gray-100);border-radius:var(--radius);font-size:.88rem;color:var(--gray-700);line-height:1.8}.reveal-wrap.is-open .reveal-content{display:block}.reveal-content ul,.reveal-content ol{padding-left:1.3em;margin:8px 0}.reveal-content li{margin-bottom:4px}
 .ref-section{margin-top:24px;padding-top:16px;border-top:1px solid var(--gray-100)}.ref-title{font-size:.72rem;font-weight:700;color:var(--gray-500);letter-spacing:.06em;margin-bottom:8px}.ref-link{display:inline-block;font-size:.75rem;font-weight:600;color:var(--gray-700);background:var(--gray-100);padding:4px 12px;border-radius:4px;margin:0 6px 6px 0;border:1px solid var(--gray-300);transition:all .15s;text-decoration:none}.ref-link:hover{background:var(--blue-bg);color:var(--blue);border-color:var(--blue);opacity:1}
-.arch-diagram{background:var(--gray-100);border:1px solid var(--gray-300);border-radius:var(--radius);padding:28px 24px;margin:20px 0;text-align:center}.arch-row{display:flex;align-items:center;justify-content:center;gap:0;flex-wrap:wrap;margin:8px 0}.arch-box{background:var(--white);border:1px solid var(--gray-300);border-radius:6px;padding:10px 16px;font-size:.78rem;font-weight:600;text-align:center;min-width:120px;line-height:1.4}.arch-box.accent{background:var(--dark);color:var(--white);border-color:var(--dark)}.arch-box.highlight{background:var(--blue-light);border-color:var(--blue);color:var(--blue-dark)}.arch-arr{font-size:.9rem;color:var(--gray-500);padding:0 8px;flex-shrink:0}
+.hint-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px;margin-bottom:20px}.hint-card{background:var(--white);border:1px solid var(--gray-100);border-radius:var(--radius);padding:20px 20px}.hint-num{font-size:.68rem;font-weight:800;color:var(--blue);letter-spacing:.08em;margin-bottom:4px}.hint-card h4{font-size:.92rem;font-weight:700;margin-bottom:8px;color:var(--dark)}.hint-card p{font-size:.82rem;color:var(--gray-700);line-height:1.7;margin-bottom:0}.hint-card .ex{font-size:.78rem;color:var(--gray-500);margin-top:6px;padding-top:6px;border-top:1px solid var(--gray-100);font-style:italic}
 .quiz-section{max-width:var(--max-w);margin:0 auto;padding:60px 24px 48px;border-top:1px solid var(--gray-100)}.quiz-start-btn{display:block;margin:0 auto 32px;font-family:var(--font-sans);font-size:.92rem;font-weight:700;color:var(--white);background:var(--blue);border:none;padding:14px 40px;border-radius:6px;cursor:pointer;transition:opacity .2s}.quiz-start-btn:hover{opacity:.85}.quiz-start-btn:disabled{opacity:.5;cursor:default}.quiz-questions{display:none}.quiz-questions.is-visible{display:block}.quiz-q-block{margin-bottom:40px}.quiz-q-text{font-size:.95rem;font-weight:700;color:var(--dark);margin-bottom:16px;padding-left:14px;border-left:3px solid var(--blue)}.quiz-choices{display:grid;gap:10px}.quiz-choice{display:flex;align-items:flex-start;gap:10px;background:var(--white);border:1.5px solid var(--gray-300);border-radius:6px;padding:14px 16px;cursor:pointer;transition:all .15s;font-size:.86rem;color:var(--gray-700);line-height:1.6;text-align:left;width:100%}.quiz-choice:hover:not(.is-correct):not(.is-wrong):not(.is-dimmed){border-color:var(--blue);background:var(--blue-bg)}.quiz-choice.is-correct{border-color:#2E7D32;background:#F0FFF0;cursor:default}.quiz-choice.is-wrong{border-color:#C62828;background:#FFF0F0;cursor:default}.quiz-choice.is-dimmed{opacity:.5;cursor:default}.quiz-choice-label{font-weight:700;color:var(--dark);flex-shrink:0;min-width:22px}.quiz-choice-text{flex:1}.quiz-explanation{display:none;margin-top:8px;font-size:.82rem;line-height:1.65;color:var(--gray-500)}.quiz-explanation.is-visible{display:block}
 .site-footer{margin-top:auto;max-width:var(--max-w);margin-left:auto;margin-right:auto;width:100%;padding:40px 24px;border-top:1px solid var(--gray-100);text-align:center;font-size:.78rem;color:var(--gray-500)}.footer-links{display:flex;justify-content:center;gap:16px;margin-bottom:12px;flex-wrap:wrap}.footer-links a{font-weight:600;font-size:.78rem}
-@media(max-width:640px){.hero h1{font-size:1.5rem}.hero-meta{flex-direction:column;align-items:center;gap:12px}.card-grid{grid-template-columns:1fr}.section-title{font-size:1.1rem}.hero{padding:80px 20px 48px}.section{padding:48px 20px 36px}.arch-row{flex-direction:column;gap:4px}.arch-box{min-width:auto;width:100%}.arch-arr{transform:rotate(90deg);padding:2px 0}}
+@media(max-width:640px){.hero h1{font-size:1.5rem}.hero-meta{flex-direction:column;align-items:center;gap:12px}.card-grid{grid-template-columns:1fr}.hint-grid{grid-template-columns:1fr}.section-title{font-size:1.1rem}.hero{padding:80px 20px 48px}.section{padding:48px 20px 36px}}
 @media print{.site-header{position:static}.reveal-btn{display:none!important}.reveal-content{display:block!important}.quiz-start-btn{display:none!important}.quiz-questions{display:block!important}.card:hover{box-shadow:none}.section{page-break-inside:avoid}.hero{padding-top:40px}body{font-size:14px}}
 </style>
 </head>
@@ -39,8 +39,8 @@ html{font-size:16px;scroll-behavior:smooth}body{font-family:var(--font-sans);col
 
 <div class="hero">
   <div class="hero-badge">SESSION 04</div>
-  <h1><em>PDF文書比較</em>ツール</h1>
-  <p class="hero-sub">本日の最終成果物です。2つのPDFをアップロードするとAIが差分を分析するウェブアプリを、セットアップし、動かし、Claude Codeでカスタマイズします。</p>
+  <h1><em>PDF文書比較</em>ツールを作る</h1>
+  <p class="hero-sub">講師が作ったPDF比較ツールのデモを見た後、同じアプリをゼロから自分のプロンプトで開発します。Claude Codeへの「指示の出し方」が試される実践セッションです。</p>
   <div class="hero-meta">
     <div class="hero-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>14:50 - 16:10（80分）</div>
     <div class="hero-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>実践</div>
@@ -50,80 +50,120 @@ html{font-size:16px;scroll-behavior:smooth}body{font-family:var(--font-sans);col
 
 <section class="section" id="overview">
   <div class="section-label">OVERVIEW</div>
-  <div class="section-title">このアプリでできること</div>
+  <div class="section-title">このセッションの進め方</div>
 
   <div class="topic">
-    <p>Session 3ではHTMLファイル1つで動くアプリを作りました。ここからはサーバーとAI APIを使った本格的なアプリに挑戦します。</p>
-    <p>PDF文書比較ツールは、2つのPDFをアップロードすると、Claude APIがその内容を読み取り、一致点・相違点・片方にしかない記述を構造的に分析して表示するアプリです。分析結果をレポート形式やメール形式に変換する機能もあります。</p>
-  </div>
-
-  <div class="card-grid">
-    <div class="card">
-      <div class="card-num">FEATURE 01</div>
-      <h3>PDF比較</h3>
-      <p>2つのPDFをアップロードして「比較を実行する」を押すだけ。AIが内容を読み取り、一致点、相違点、固有の記述を分類して返します。</p>
-    </div>
-    <div class="card">
-      <div class="card-num">FEATURE 02</div>
-      <h3>レポート / メール変換</h3>
-      <p>比較結果をボタン1つでビジネスレポートや社内メールの文面に変換できます。上司への報告書作成を自動化する発想です。</p>
-    </div>
-  </div>
-
-  <div class="callout">
-    <div class="callout-title">Session 3との違い</div>
-    <p>Session 3のチェックリストはHTMLファイル1つで完結しました。PDF比較ツールは、サーバー（Express）がPDFの受け取りとClaude APIへのリクエストを担当し、フロントエンド（HTML/CSS/JS）がユーザー操作と結果表示を受け持ちます。役割が分かれている分、実務に近い構成です。</p>
-  </div>
-</section>
-
-
-<section class="section" id="setup">
-  <div class="section-label">STEP 1 / 15 MIN</div>
-  <div class="section-title">セットアップ</div>
-
-  <div class="topic">
-    <p>講師が配布したフォルダの中に <code>pdf-compare-app</code> があります。このフォルダをVSCodeで開いてください。</p>
+    <p>Session 3ではHTMLファイル1つで動くアプリを作りました。ここからは、サーバーとAI APIを使った本格的なウェブアプリに挑戦します。</p>
+    <p>ただし、今回は完成品のコードを渡して改修する形ではありません。講師のデモを見てから、自分自身のプロンプトでゼロからアプリを開発していただきます。</p>
   </div>
 
   <div class="flow">
     <div class="flow-step">
-      <div class="flow-step-label">VSCodeでフォルダを開く</div>
-      <div class="flow-step-desc">「ファイル」→「フォルダーを開く」で pdf-compare-app を選択してください。</div>
+      <div class="flow-step-label">講師デモを見る</div>
+      <div class="flow-step-desc">完成版のPDF比較ツールを講師が動かします。画面構成と操作の流れを観察してください。</div>
     </div>
     <div class="flow-step">
-      <div class="flow-step-label">ターミナルを開く</div>
-      <div class="flow-step-desc">Ctrl + ` （バッククォート）でVSCode下部にターミナルが表示されます。</div>
+      <div class="flow-step-label">ダミーデータを確認する</div>
+      <div class="flow-step-desc">比較対象となるPDFの3セットを全員で開き、中身と差分のポイントを把握します。</div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-step-label">自分のプロンプトで開発する</div>
+      <div class="flow-step-desc">デモで見た画面をゴールに、Claude Codeへプロンプトを書いてアプリを構築します。</div>
     </div>
     <div class="flow-step is-end">
-      <div class="flow-step-label">依存パッケージをインストール</div>
-      <div class="flow-step-desc">以下のコマンドを実行してください。</div>
+      <div class="flow-step-label">完成したアプリを共有する</div>
+      <div class="flow-step-desc">動作確認ができたらスクリーンショットを撮り、ZOOMチャットで全員に共有します。</div>
     </div>
   </div>
 
-  <div class="code-block"><span class="cm">// 依存パッケージのインストール（1回だけ実行）</span>
-npm install</div>
-
-  <div class="reveal-wrap">
-    <button class="reveal-btn">npm install とは？ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
-    <div class="reveal-content">
-      <p><span class="term" data-def="Node.jsのパッケージマネージャー。package.jsonに記載されたライブラリを自動でダウンロード・管理します。">npm</span>はNode.jsに付属するパッケージ管理ツールです。<code>npm install</code> を実行すると、このアプリが必要とするライブラリ（Express、Anthropic SDK、multerなど）が自動でダウンロードされ、node_modules フォルダに格納されます。</p>
-      <p>package.json というファイルに「このアプリが何を必要としているか」が書かれていて、npm install はそれを読み取って処理します。</p>
-    </div>
+  <div class="callout">
+    <div class="callout-title">完成品は参考用として配布済みです</div>
+    <p>講師が作った pdf-compare-app フォルダは参照用として配布しています。行き詰まったときにコードを見る用途に使ってください。メインの学びは「自分のプロンプトで作ること」にあります。</p>
   </div>
+</section>
+
+
+<section class="section" id="demo">
+  <div class="section-label">STEP 1 / 10 MIN</div>
+  <div class="section-title">講師デモを見る</div>
 
   <div class="topic">
-    <div class="topic-title">環境変数ファイルの作成</div>
-    <p>Claude APIを使うには<span class="term" data-def="AnthropicのAIサービスにアクセスするための認証キー。このキーがないとAPIを呼び出せません。">APIキー</span>が必要です。プロジェクトのルートに .env ファイルを作成してください。</p>
+    <p>講師がPDF比較ツールの完成版を操作します。画面を見ながら、以下の点を意識して観察してください。</p>
+  </div>
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-num">観察ポイント 01</div>
+      <h3>画面構成</h3>
+      <p>PDFをアップロードするエリアが2つ、比較実行ボタン、結果の表示エリアがどう配置されているかを見てください。</p>
+    </div>
+    <div class="card">
+      <div class="card-num">観察ポイント 02</div>
+      <h3>操作の流れ</h3>
+      <p>PDFを選ぶ → 比較を実行 → 結果を読む → レポートやメールに変換、という一連の流れを追ってください。</p>
+    </div>
+    <div class="card">
+      <div class="card-num">観察ポイント 03</div>
+      <h3>比較結果の構造</h3>
+      <p>概要、一致点、相違点（重要度つき）、片方にだけある記述、の4セクションに分かれて表示されます。</p>
+    </div>
+    <div class="card">
+      <div class="card-num">観察ポイント 04</div>
+      <h3>変換機能</h3>
+      <p>比較結果をビジネスレポートやメール文面に変換するボタンがあります。上司への報告を自動化する発想です。</p>
+    </div>
   </div>
 
   <div class="disc">
-    <div class="disc-label">EXERCISE</div>
-    <h3>.env ファイルを作成する</h3>
-    <ol>
-      <li>VSCodeのファイルツリーを右クリック →「新しいファイル」</li>
-      <li>ファイル名を <code>.env</code> にする（ドットから始まる点に注意）</li>
-      <li>講師から配布されたAPIキーを以下の形式で記入する</li>
-    </ol>
+    <div class="disc-label">ACTION</div>
+    <h3>デモ画面のスクリーンショットを撮っておく</h3>
+    <p>後の開発で「この画面を参考にしてください」とClaude Codeに見せる材料になります。Windows の場合は Win + Shift + S、Mac の場合は Cmd + Shift + 4 で画面の一部をキャプチャできます。</p>
+  </div>
+</section>
+
+
+<section class="section" id="data">
+  <div class="section-label">STEP 2 / 15 MIN</div>
+  <div class="section-title">ダミーデータの確認と開発準備</div>
+
+  <div class="topic">
+    <div class="topic-title">3セットのサンプルPDF</div>
+    <p>配布フォルダの <code>sample-data/</code> に3種類の文書ペアが入っています。講師と一緒にそれぞれの内容を開いて確認しましょう。比較対象の文書にどんな差分が含まれているかを事前に把握しておくと、完成後の動作検証がスムーズになります。</p>
+  </div>
+
+  <div style="margin:20px 0;overflow-x:auto;border:1px solid var(--gray-100);border-radius:var(--radius)">
+    <table style="width:100%;border-collapse:collapse;font-size:.86rem">
+      <thead><tr><th style="background:var(--dark);color:var(--white);padding:12px 16px;text-align:left">セット</th><th style="background:var(--dark);color:var(--white);padding:12px 16px;text-align:left">文書の種類</th><th style="background:var(--dark);color:var(--white);padding:12px 16px;text-align:left">ファイル名</th><th style="background:var(--dark);color:var(--white);padding:12px 16px;text-align:left">注目すべき差分</th></tr></thead>
+      <tbody>
+        <tr><td style="padding:11px 16px;border-bottom:1px solid var(--gray-100);font-weight:700;color:var(--blue)">set1</td><td style="padding:11px 16px;border-bottom:1px solid var(--gray-100)">設備点検手順書</td><td style="padding:11px 16px;border-bottom:1px solid var(--gray-100);font-family:var(--font-mono);font-size:.8rem">set1_設備点検手順書_v1.0.pdf<br>set1_設備点検手順書_v2.0.pdf</td><td style="padding:11px 16px;border-bottom:1px solid var(--gray-100)">v2.0でGMP対応の追加、重量検査装置の手順追加、充填精度基準の変更</td></tr>
+        <tr style="background:rgba(0,0,0,.015)"><td style="padding:11px 16px;border-bottom:1px solid var(--gray-100);font-weight:700">set2</td><td style="padding:11px 16px;border-bottom:1px solid var(--gray-100)">業務委託契約書</td><td style="padding:11px 16px;border-bottom:1px solid var(--gray-100);font-family:var(--font-mono);font-size:.8rem">set2_業務委託契約書_A社案.pdf<br>set2_業務委託契約書_B社案.pdf</td><td style="padding:11px 16px;border-bottom:1px solid var(--gray-100)">報酬条件、責任範囲、契約期間の条項の差異</td></tr>
+        <tr><td style="padding:11px 16px;font-weight:700">set3</td><td style="padding:11px 16px">技術仕様書</td><td style="padding:11px 16px;font-family:var(--font-mono);font-size:.8rem">set3_技術仕様書_HX-200現行.pdf<br>set3_技術仕様書_HX-300次期.pdf</td><td style="padding:11px 16px">型番の違い、スペック数値、新機能の有無</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="topic">
+    <div class="topic-title">開発フォルダの準備</div>
+    <p>自分専用の開発フォルダを作り、必要なファイルだけ配置します。</p>
+  </div>
+
+  <div class="flow">
+    <div class="flow-step">
+      <div class="flow-step-label">新しいフォルダを作る</div>
+      <div class="flow-step-desc">デスクトップなど好きな場所に <code>my-pdf-compare</code> フォルダを作成してください。</div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-step-label">sample-data をコピーする</div>
+      <div class="flow-step-desc">配布フォルダ内の <code>sample-data/</code> を丸ごと <code>my-pdf-compare/</code> にコピーしてください。</div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-step-label">.env ファイルを作成する</div>
+      <div class="flow-step-desc">VSCodeでフォルダを開き、ルートに <code>.env</code> ファイルを作って講師配布のAPIキーを記入します。</div>
+    </div>
+    <div class="flow-step is-end">
+      <div class="flow-step-label">Claude Code を起動する</div>
+      <div class="flow-step-desc">VSCodeのターミナルで <code>claude</code> と入力してClaude Codeを起動してください。</div>
+    </div>
   </div>
 
   <div class="code-block"><span class="cm">// .env ファイルの内容（講師配布のキーを貼り付け）</span>
@@ -133,292 +173,137 @@ ANTHROPIC_API_KEY=sk-ant-xxxxxxxxxxxxxxxx</div>
     <div class="callout-title">APIキーは外部に公開しないでください</div>
     <p>.env ファイルに記載するAPIキーは認証情報です。メールやチャットに貼り付けたり、GitHubにアップロードしたりしないでください。研修終了後にキーは無効化されます。</p>
   </div>
-
-  <div class="callout">
-    <div class="callout-title">達成条件</div>
-    <p><code>npm install</code> 完了後、ターミナルに「added XXX packages」と表示され、フォルダ内に <code>node_modules</code> フォルダが出現していれば成功です。.env ファイルも作成済みであることを確認してください。</p>
-  </div>
-
-  <div class="topic">
-    <div class="topic-title">サンプルPDFの確認</div>
-    <p>配布フォルダの <code>sample-data/</code> に3セットのダミーPDFが同梱されています。まずは set1 を使って動作確認を行います。</p>
-  </div>
-
-  <div class="tbl-wrap" style="margin:20px 0;border:1px solid var(--gray-100);border-radius:var(--radius)">
-    <table style="width:100%;border-collapse:collapse;font-size:.86rem">
-      <thead><tr><th style="background:var(--dark);color:var(--white);padding:12px 16px;text-align:left">セット</th><th style="background:var(--dark);color:var(--white);padding:12px 16px;text-align:left">文書の種類</th><th style="background:var(--dark);color:var(--white);padding:12px 16px;text-align:left">ファイル名</th><th style="background:var(--dark);color:var(--white);padding:12px 16px;text-align:left">用途</th></tr></thead>
-      <tbody>
-        <tr><td style="padding:11px 16px;border-bottom:1px solid var(--gray-100);font-weight:700;color:var(--blue)">set1</td><td style="padding:11px 16px;border-bottom:1px solid var(--gray-100)">設備点検手順書</td><td style="padding:11px 16px;border-bottom:1px solid var(--gray-100);font-family:var(--font-mono);font-size:.8rem">set1_設備点検手順書_v1.0.pdf<br>set1_設備点検手順書_v2.0.pdf</td><td style="padding:11px 16px;border-bottom:1px solid var(--gray-100)">まずはこのセットで試す</td></tr>
-        <tr style="background:rgba(0,0,0,.015)"><td style="padding:11px 16px;border-bottom:1px solid var(--gray-100);font-weight:700">set2</td><td style="padding:11px 16px;border-bottom:1px solid var(--gray-100)">業務委託契約書</td><td style="padding:11px 16px;border-bottom:1px solid var(--gray-100);font-family:var(--font-mono);font-size:.8rem">set2_業務委託契約書_A社案.pdf<br>set2_業務委託契約書_B社案.pdf</td><td style="padding:11px 16px;border-bottom:1px solid var(--gray-100)">カスタマイズ後に試す</td></tr>
-        <tr><td style="padding:11px 16px;font-weight:700">set3</td><td style="padding:11px 16px">技術仕様書</td><td style="padding:11px 16px;font-family:var(--font-mono);font-size:.8rem">set3_技術仕様書_HX-200現行.pdf<br>set3_技術仕様書_HX-300次期.pdf</td><td style="padding:11px 16px">余裕があれば</td></tr>
-      </tbody>
-    </table>
-  </div>
 </section>
 
 
-<section class="section" id="run">
-  <div class="section-label">STEP 2 / 15 MIN</div>
-  <div class="section-title">アプリを起動してテストする</div>
+<section class="section" id="develop">
+  <div class="section-label">STEP 3 / 40 MIN</div>
+  <div class="section-title">自分のプロンプトで開発する</div>
 
   <div class="topic">
-    <p>セットアップが完了したら、サーバーを起動します。</p>
-  </div>
-
-  <div class="code-block"><span class="cm">// サーバーを起動する</span>
-npm start</div>
-
-  <div class="callout">
-    <div class="callout-title">達成条件: サーバー起動</div>
-    <p>ターミナルに「PDF比較アプリが起動しました: http://localhost:3001」と表示されていれば成功です。</p>
+    <p>ここが本セッションの核です。デモで見た画面をゴールとして、Claude Codeに「何を作りたいか」を自分の言葉で伝えてください。</p>
+    <p>プロンプトをいきなり完璧に書く必要はありません。まず大まかな指示を出し、足りない部分を追加で伝える。Session 3で身につけた「具体的に / 一度にひとつ / 結果を確認」のリズムがここでも使えます。</p>
   </div>
 
   <div class="topic">
-    <p>ブラウザで <code>http://localhost:3001</code> を開いてください。</p>
+    <div class="topic-title">プロンプトに含めたい7つの要素</div>
+    <p>以下の要素をヒントにして、自分なりのプロンプトを組み立ててください。一度に全部伝えても、数回に分けて伝えても構いません。</p>
   </div>
 
-  <div class="callout">
-    <div class="callout-title">達成条件: 画面表示</div>
-    <p>ブラウザにPDFのアップロードエリアが2つ（文書1、文書2）表示されていれば成功です。</p>
-  </div>
-
-  <div class="disc">
-    <div class="disc-label">EXERCISE</div>
-    <h3>set1のサンプルPDFで比較してみる</h3>
-    <ol>
-      <li><code>sample-data/set1_設備点検手順書_v1.0.pdf</code> を「文書1」エリアにドラッグ&ドロップ</li>
-      <li><code>sample-data/set1_設備点検手順書_v2.0.pdf</code> を「文書2」エリアにドラッグ&ドロップ</li>
-      <li>「比較を実行する」ボタンをクリック</li>
-      <li>AIの分析が完了するまで20〜30秒ほど待つ</li>
-    </ol>
-  </div>
-
-  <div class="topic">
-    <div class="topic-title">期待される結果</div>
-    <p>比較が完了すると、概要、一致点、相違点、片方にだけある内容の4セクションが表示されます。set1の場合、以下のような相違点が検出されるはずです。</p>
-    <ul>
-      <li>v2.0でのGMP対応に関する記述の追加</li>
-      <li>重量検査装置に関する手順の追加</li>
-      <li>充填精度基準の数値変更</li>
-    </ul>
-    <p>相違点セクションには重要度（高/中/低）が付与されています。</p>
-  </div>
-
-  <div class="flow">
-    <div class="flow-step">
-      <div class="flow-step-label">レポート形式に変換してみる</div>
-      <div class="flow-step-desc">比較結果の下にある「レポート形式で出力」ボタンを押してください。ビジネスレポートの文面が生成されます。</div>
+  <div class="hint-grid">
+    <div class="hint-card">
+      <div class="hint-num">01</div>
+      <h4>役割</h4>
+      <p>Claude Codeに「どんな開発者として振る舞ってほしいか」を伝えます。</p>
+      <div class="ex">例: あなたはNode.jsのウェブアプリ開発者です</div>
     </div>
-    <div class="flow-step is-end">
-      <div class="flow-step-label">メール形式に変換してみる</div>
-      <div class="flow-step-desc">「メール形式に変換」も試してください。上司への報告メールのドラフトが生成されます。</div>
+    <div class="hint-card">
+      <div class="hint-num">02</div>
+      <h4>目的</h4>
+      <p>作りたいものを端的に伝えます。一文で言い切れるのが理想です。</p>
+      <div class="ex">例: 2つのPDFを比較分析するウェブアプリを作ってください</div>
+    </div>
+    <div class="hint-card">
+      <div class="hint-num">03</div>
+      <h4>条件</h4>
+      <p>使う技術やポート番号など、守ってほしい制約を伝えます。</p>
+      <div class="ex">例: Express で localhost:3001 に立てて、Anthropic SDK を使用</div>
+    </div>
+    <div class="hint-card">
+      <div class="hint-num">04</div>
+      <h4>文脈</h4>
+      <p>なぜ作るのか、どんな場面で使うのかを補足します。スクリーンショットの説明も有効です。</p>
+      <div class="ex">例: 先ほどのデモのスクリーンショットを参考にしてください</div>
+    </div>
+    <div class="hint-card">
+      <div class="hint-num">05</div>
+      <h4>ダミーデータ</h4>
+      <p>テスト用のデータがどこにあるかを伝えます。</p>
+      <div class="ex">例: sample-data/ に3セットのテスト用PDFがあります</div>
+    </div>
+    <div class="hint-card">
+      <div class="hint-num">06</div>
+      <h4>出力形式と場所</h4>
+      <p>ファイル構成の指定です。サーバー側とフロント側を分ける構成も伝えられます。</p>
+      <div class="ex">例: server.js をルートに、フロントは public/ に配置</div>
     </div>
   </div>
 
+  <div class="hint-grid" style="grid-template-columns:1fr;max-width:calc(50% - 8px)">
+    <div class="hint-card">
+      <div class="hint-num">07</div>
+      <h4>APIの使用方法</h4>
+      <p>外部APIをどう使うかを伝えます。キーの場所も知らせてください。</p>
+      <div class="ex">例: .env の ANTHROPIC_API_KEY で Claude API を呼び出し、PDFを分析</div>
+    </div>
+  </div>
+
+  <div class="reveal-wrap">
+    <button class="reveal-btn">行き詰まった場合の参考プロンプト <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+    <div class="reveal-content">
+      <p>以下は全要素を盛り込んだ場合の一例です。丸写しではなく、自分の言葉で書き換えて使ってください。</p>
+      <div class="code-block"><span class="cm">// 参考プロンプト（あくまで一例）</span>
+
+あなたはNode.jsのウェブアプリ開発者です。
+以下の要件でPDF文書比較ツールを作ってください。
+
+【目的】
+2つのPDFをアップロードし、AIが内容を比較分析するウェブアプリ
+
+【技術条件】
+- Express でサーバーを構築、localhost:3001 で起動
+- Anthropic SDK で Claude API を呼び出す
+- multer でPDFアップロードを処理
+- pdf-parse でPDFテキストを抽出
+
+【ファイル構成】
+- server.js（サーバー）
+- public/index.html（画面）
+- public/style.css（デザイン）
+- public/app.js（操作と表示）
+- package.json
+
+【機能】
+- PDFを2つアップロードするUI
+- 比較実行ボタン
+- 結果表示（概要、一致点、相違点、固有の記述）
+- 相違点に重要度（高/中/低）を付与
+- レポート形式への変換ボタン
+- メール形式への変換ボタン
+
+【データ】
+- sample-data/ にテスト用PDFが3セットあります
+- APIキーは .env の ANTHROPIC_API_KEY に設定済みです</div>
+    </div>
+  </div>
+
   <div class="callout">
-    <div class="callout-title">サーバーを止めたいとき</div>
-    <p>ターミナルで Ctrl + C を押すとサーバーが停止します。再度 <code>npm start</code> で起動できます。カスタマイズ中はサーバーを一度止めてから再起動する場面があります。</p>
+    <div class="callout-title">開発の進め方</div>
+    <p>プロンプトを送信すると、Claude Codeがファイルを生成し、必要なパッケージのインストールまで実行してくれます。生成が終わったら、ターミナルで <code>npm start</code> を実行してブラウザで <code>http://localhost:3001</code> を開いてください。画面が表示されれば第一段階は成功です。</p>
+  </div>
+
+  <div class="topic">
+    <div class="topic-title">動いたらset1で比較を試す</div>
+    <p>sample-data/ の set1（設備点検手順書 v1.0 と v2.0）を使って比較を実行してください。結果が表示されればアプリは完成です。</p>
+    <p>もし結果の表示がおかしかったり、機能が足りなかったりしたら、追加のプロンプトで修正を依頼してください。一度で完璧にならなくて当然です。</p>
   </div>
 
   <div class="callout callout-warn">
-    <div class="callout-title">エラーが出たときのClaude Code活用法</div>
-    <p>比較実行時にエラーが出た場合は、ブラウザの画面やターミナルに表示されるエラーメッセージをそのままClaude Codeに貼り付けてください。「npm startしたら以下のエラーが出ました」の一文に続けてエラー全文を渡すだけで、原因の特定と修正コードを提案してくれます。自分でエラーの意味を理解する必要はありません。</p>
-  </div>
-</section>
-
-
-<section class="section" id="architecture">
-  <div class="section-label">STEP 3 / 15 MIN</div>
-  <div class="section-title">アーキテクチャを理解する</div>
-
-  <div class="topic">
-    <p>このアプリがどう動いているかを把握すると、カスタマイズの精度が上がります。ファイル構成はシンプルです。</p>
+    <div class="callout-title">server.js を変更したらサーバーを再起動</div>
+    <p>Claude Codeがserver.jsを修正した場合は、ターミナルで Ctrl+C → <code>npm start</code> でサーバーを再起動してください。public/ フォルダだけの変更ならブラウザのリロード（F5）で反映されます。</p>
   </div>
 
   <div class="card-grid">
     <div class="card">
-      <div class="card-num">SERVER</div>
-      <h3>server.js</h3>
-      <p>アプリの頭脳です。PDFの受け取り、Claude APIへのリクエスト、結果の返却を担当します。Express というフレームワークで動いています。</p>
-      <ul>
-        <li>/api/compare ── PDF比較</li>
-        <li>/api/convert/report ── レポート変換</li>
-        <li>/api/convert/email ── メール変換</li>
-      </ul>
+      <div class="card-num">TIPS</div>
+      <h3>プロンプトの中のプロンプト</h3>
+      <p>このアプリの server.js には、Claude APIに送る分析指示（プロンプト）が含まれています。「AIに指示を出す文章を、別のAIに書いてもらう」構造です。ここを調整すると分析の切り口が変わります。「法務観点で分析して」「安全管理の視点で比較して」といった指示も有効です。</p>
     </div>
     <div class="card">
-      <div class="card-num">FRONTEND</div>
-      <h3>public/ フォルダ</h3>
-      <p>ユーザーがブラウザで見る画面です。PDFのアップロード、結果の表示、変換ボタンなどを担当します。</p>
-      <ul>
-        <li>index.html ── 画面構造</li>
-        <li>style.css ── デザイン</li>
-        <li>app.js ── 操作と表示</li>
-      </ul>
+      <div class="card-num">TIPS</div>
+      <h3>完成品を参照する</h3>
+      <p>思うように動かない場合は、配布済みの pdf-compare-app フォルダのコードを見て構いません。server.js のプロンプト構造や public/ のUI構成を参考にして、自分のアプリに反映してください。</p>
     </div>
-  </div>
-
-  <div style="margin:24px 0;position:relative;max-width:640px;margin-left:auto;margin-right:auto">
-    <img src="images/architecture-flow.png" alt="PDF比較ツール アーキテクチャ" style="width:100%;height:auto;display:block;border:1px solid var(--gray-100);border-radius:var(--radius)">
-    <div style="display:flex;justify-content:space-around;margin-top:8px;padding:0 6%">
-      <div style="text-align:center">
-        <div style="font-size:.82rem;font-weight:700;color:var(--dark)">ブラウザ</div>
-        <div style="font-size:.72rem;color:var(--gray-500)">PDF選択 + 表示</div>
-      </div>
-      <div style="text-align:center">
-        <div style="font-size:.82rem;font-weight:700;color:var(--blue-dark)">server.js</div>
-        <div style="font-size:.72rem;color:var(--gray-500)">Express サーバー</div>
-      </div>
-      <div style="text-align:center">
-        <div style="font-size:.82rem;font-weight:700;color:var(--dark)">Claude API</div>
-        <div style="font-size:.72rem;color:var(--gray-500)">PDF読み取り + 分析</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="disc">
-    <div class="disc-label">EXERCISE</div>
-    <h3>Claude Code にコードの内容を聞いてみる</h3>
-    <p>新しいターミナルを開いて（サーバーは動かしたまま）、Claude Codeを起動してください。</p>
-  </div>
-
-  <div class="code-block"><span class="cm">// Claude Code に聞いてみるプロンプト</span>
-
-server.js を読んで、このアプリがどう動いているか
-日本語で分かりやすく説明してください。</div>
-
-  <div class="topic">
-    <p>Claude Codeはファイルの中身を読んで解説してくれます。「/api/compare はどういう処理をしていますか？」のように、特定のエンドポイントを深掘りする質問もできます。</p>
-  </div>
-
-  <div class="callout">
-    <div class="callout-title">Claude Code はプロジェクト全体を「見て」います</div>
-    <p>Claude Codeは起動したフォルダ配下のファイルを自動的に認識します。「server.jsを読んで」と指示すれば、ファイルの中身を読み取ってから回答してくれます。この「プロジェクトのファイルを参照できる」点が、通常のチャットAIとの決定的な違いです。プロンプトにファイル名を含めると、どのファイルを対象にしているかが明確になり、修正の精度が上がります。</p>
-  </div>
-
-  <div class="reveal-wrap">
-    <button class="reveal-btn">APIとエンドポイントとは？ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
-    <div class="reveal-content">
-      <p><span class="term" data-def="Application Programming Interface。ソフトウェア同士がデータをやり取りするための窓口です。">API</span>は、プログラム同士が会話するための窓口です。このアプリでは、ブラウザがサーバーにPDFを送る窓口（/api/compare）と、Claude APIに分析を依頼する窓口の2つのAPIが登場します。</p>
-      <p><span class="term" data-def="APIの中の個々のURLパス。それぞれが異なる機能を提供します。">エンドポイント</span>はAPIの中の個々の入口のことです。/api/compare、/api/convert/report、/api/convert/email の3つがこのアプリのエンドポイントにあたります。</p>
-    </div>
-  </div>
-</section>
-
-
-<section class="section" id="customize">
-  <div class="section-label">STEP 4 / 30 MIN</div>
-  <div class="section-title">Claude Code でカスタマイズする</div>
-
-  <div class="topic">
-    <p>Session 3で覚えた「要件を伝える → 結果を確認 → 追加指示」のサイクルを、このアプリでも使います。以下のカスタマイズを順番に試してください。</p>
-  </div>
-
-  <div class="callout">
-    <div class="callout-title">カスタマイズを始める前に /clear する</div>
-    <p>STEP 3でコードの説明を聞いた会話がまだ残っています。カスタマイズに入る前に <code>/clear</code> で会話をリセットしてください。「コードの説明」と「コードの修正」は目的が違うので、コンテキストを切り替えたほうが正確な修正が返ってきます。</p>
-  </div>
-
-  <div class="topic">
-    <div class="topic-title">ファイル名を指示に含める</div>
-    <p>複数ファイルで構成されたプロジェクトでは、プロンプトに対象ファイル名を書くことが重要です。「style.cssを修正して」「server.jsの/api/compareを変更して」のように、どのファイルのどの部分を触るかを明示すると、Claude Codeが誤ったファイルを編集するリスクが減ります。</p>
-  </div>
-
-  <div class="disc">
-    <div class="disc-label">EXERCISE 1</div>
-    <h3>UIの見た目を変更する</h3>
-    <p>フロントエンドの見た目をカスタマイズします。サーバーの再起動は不要で、ブラウザのリロード（F5）だけで反映されます。</p>
-  </div>
-
-  <div class="code-block"><span class="cm">// Claude Code に入力するプロンプト（例）</span>
-
-public/style.css と public/index.html を修正して、
-ヘッダーの背景色を紺色（#1a2a4a）に、
-タイトルの文字色を白に変更してください。</div>
-
-  <div class="callout">
-    <div class="callout-title">達成条件</div>
-    <p>ブラウザをリロード（F5）して、ヘッダーが紺色に変わっていれば成功です。server.jsの変更ではないため、サーバーの再起動は不要です。</p>
-  </div>
-
-  <div class="disc">
-    <div class="disc-label">EXERCISE 2</div>
-    <h3>比較結果のJSON構造を変更する</h3>
-    <p>server.jsのプロンプトを修正して、分析の出力内容を変えてみます。変更後はサーバーの再起動（Ctrl+C → npm start）が必要です。</p>
-  </div>
-
-  <div class="code-block"><span class="cm">// Claude Code に入力するプロンプト（例）</span>
-
-server.js の /api/compare エンドポイントで、
-比較結果のJSONに "recommendation" フィールドを追加してください。
-それぞれの相違点に対して、どちらの文書の記載が望ましいかの推奨を
-AIに書かせるようにしてください。
-フロントエンドの表示も対応させてください。</div>
-
-  <div class="callout">
-    <div class="callout-title">達成条件</div>
-    <p>サーバーを再起動（Ctrl+C → npm start）し、再度set1のPDFで比較を実行してください。各相違点に「推奨」や「recommendation」の記述が追加されていれば成功です。</p>
-  </div>
-
-  <div class="reveal-wrap">
-    <button class="reveal-btn">プロンプトの中のプロンプトとは？ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
-    <div class="reveal-content">
-      <p>EXERCISE 2 では、server.js の中にある Claude API へのプロンプト（AIへの分析指示）を Claude Code に書き換えてもらいました。つまり「AIに指示を出すための文章を、別のAIに書いてもらう」構造です。</p>
-      <p>server.js に書かれたプロンプトが比較結果の品質を左右するため、ここを自分の業務に合わせて調整するのがこのアプリの真のカスタマイズポイントになります。「重要度の判定基準を変えて」「法務観点で分析して」といった指示で、分析の切り口を変えられます。</p>
-    </div>
-  </div>
-
-  <div class="disc">
-    <div class="disc-label">EXERCISE 3</div>
-    <h3>新しい変換形式を追加する</h3>
-    <p>レポートとメール以外に、もう1つの出力形式を追加してみます。</p>
-  </div>
-
-  <div class="code-block"><span class="cm">// Claude Code に入力するプロンプト（例）</span>
-
-比較結果を「議事録の付録」形式に変換する機能を追加してください。
-server.js に /api/convert/minutes エンドポイントを追加し、
-フロントエンドにも「議事録付録に変換」ボタンを追加してください。
-出力は、会議で配布する資料として使える体裁にしてください。</div>
-
-  <div class="callout">
-    <div class="callout-title">達成条件</div>
-    <p>サーバーを再起動し、比較結果の下に「議事録付録に変換」ボタンが表示されていれば成功です。ボタンを押して変換結果が表示されることも確認してください。</p>
-  </div>
-
-  <div class="callout callout-warn">
-    <div class="callout-title">カスタマイズ後の動作確認</div>
-    <p>server.jsを変更した場合は、ターミナルで Ctrl+C → npm start でサーバーを再起動してください。public/ フォルダだけの変更なら、ブラウザのリロード（F5）で反映されます。</p>
-  </div>
-
-  <div class="topic">
-    <div class="topic-title">他のサンプルPDFセットでも試してみる</div>
-    <p>EXERCISE 1〜3を終えた方は、set2（業務委託契約書）やset3（技術仕様書）でも比較を実行してみてください。文書の種類が変わるとAIの分析観点も変わることが体感できます。</p>
-  </div>
-
-  <div class="card-grid">
-    <div class="card">
-      <div class="card-num">ADVANCED TECHNIQUE</div>
-      <h3>変更内容の差分を確認する</h3>
-      <p>Claude Codeがコードを変更するとき、ターミナルに「どの行を追加し、どの行を削除したか」が表示されます。この<span class="term" data-def="ファイルの変更前と変更後の差分。追加された行は緑、削除された行は赤で表示されるのが一般的です。">diff（差分）</span>を読む習慣をつけると、意図しない変更を早期に発見できます。全部を理解する必要はなく、変更されたファイル名と行数だけ追えば十分です。</p>
-    </div>
-    <div class="card">
-      <div class="card-num">ADVANCED TECHNIQUE</div>
-      <h3>複数ファイルへの変更を一度に頼む</h3>
-      <p>EXERCISE 2〜3のように、サーバー側とフロント側の両方を変更する指示は、1つのプロンプトにまとめて出して構いません。「server.jsに新しいエンドポイントを追加し、フロントエンドにも対応ボタンを追加してください」のように、関連する変更を1つの文脈で渡したほうが一貫性のある結果が出ます。</p>
-    </div>
-  </div>
-
-  <div class="disc">
-    <div class="disc-label">CHALLENGE（余裕のある方向け）</div>
-    <h3>自由にカスタマイズ</h3>
-    <p>ここまでの演習を終えた方は、自分の業務を想定して自由に機能を追加してみてください。</p>
-    <ul>
-      <li>「比較結果をCSVファイルでダウンロードできるようにして」</li>
-      <li>「3つ以上のPDFを同時に比較できるようにして」</li>
-      <li>「比較履歴を画面に一覧表示して、過去の結果を見返せるようにして」</li>
-      <li>「特定の章だけを比較する機能を追加して」</li>
-    </ul>
   </div>
 
   <div class="ref-section">
@@ -430,6 +315,45 @@ server.js に /api/convert/minutes エンドポイントを追加し、
 </section>
 
 
+<section class="section" id="share">
+  <div class="section-label">STEP 4 / 15 MIN</div>
+  <div class="section-title">完成と共有</div>
+
+  <div class="topic">
+    <div class="topic-title">エラーが出た場合</div>
+    <p>アプリの起動や比較実行でエラーが出るのは珍しくありません。ブラウザやターミナルに表示されるエラーメッセージをそのままClaude Codeに貼り付けてください。</p>
+  </div>
+
+  <div class="code-block"><span class="cm">// エラー対応のプロンプト例</span>
+
+npm start したら以下のエラーが出ました。修正してください。
+
+Error: Cannot find module 'express'
+...</div>
+
+  <div class="callout">
+    <div class="callout-title">自分でエラーの意味を理解する必要はありません</div>
+    <p>エラーメッセージの全文をClaude Codeに渡すだけで、原因の特定と修正を一括で行ってくれます。「何が起きているか」よりも「エラーを正確にコピペすること」が大事です。</p>
+  </div>
+
+  <div class="topic">
+    <div class="topic-title">全員の動作確認</div>
+    <p>set1のPDFで比較結果が表示されたら完成です。講師が全員の画面を順番に確認します。</p>
+  </div>
+
+  <div class="disc">
+    <div class="disc-label">FINAL ACTION</div>
+    <h3>ZOOMチャットにスクリーンショットを共有</h3>
+    <p>完成したアプリの比較結果画面をスクリーンショットで撮影し、ZOOMのチャットに貼り付けてください。全員のアプリがどんな見た目になったか、比較するのも面白い発見になります。同じ要件でもプロンプトの書き方次第でUIや分析結果の見せ方が変わることを体感してください。</p>
+  </div>
+
+  <div class="topic">
+    <div class="topic-title">余裕がある方は</div>
+    <p>set2（業務委託契約書）やset3（技術仕様書）でも比較を試してみてください。文書の種類が変わるとAIの分析観点が変わることが体感できます。独自の機能追加（CSV出力、比較履歴の保存など）にも挑戦してみてください。</p>
+  </div>
+</section>
+
+
 <section class="quiz-section" id="quiz">
   <div class="section-label">COMPREHENSION CHECK</div>
   <div class="section-title">理解度チェック</div>
@@ -437,20 +361,20 @@ server.js に /api/convert/minutes エンドポイントを追加し、
   <div class="quiz-questions">
 
     <div class="quiz-q-block">
-      <div class="quiz-q-text">Q1. PDF文書比較ツールで、PDFの内容を実際に読み取って分析しているのはどこですか</div>
+      <div class="quiz-q-text">Q1. Claude Codeでアプリをゼロから開発するとき、プロンプトに含めると効果が高い要素はどれですか</div>
       <div class="quiz-choices">
-        <div class="quiz-choice" data-correct="false"><span class="quiz-choice-label">A</span><span class="quiz-choice-text">ブラウザ（public/app.js）<span class="quiz-explanation">ブラウザはPDFのアップロードと結果の表示を担当しています。PDF読み取りと分析はサーバー経由でClaude APIが行います。</span></span></div>
-        <div class="quiz-choice" data-correct="true"><span class="quiz-choice-label">B</span><span class="quiz-choice-text">Claude API（server.jsから呼び出し）<span class="quiz-explanation">正解です。server.jsがPDFをbase64に変換してClaude APIに送信し、AIが内容を読み取って差分を分析します。分析結果はJSONで返され、ブラウザに表示されます。</span></span></div>
-        <div class="quiz-choice" data-correct="false"><span class="quiz-choice-label">C</span><span class="quiz-choice-text">npm install でインストールしたライブラリ<span class="quiz-explanation">ライブラリはサーバー起動やファイルアップロードの処理を助けますが、PDF内容の分析そのものはClaude APIが担当しています。</span></span></div>
+        <div class="quiz-choice" data-correct="false"><span class="quiz-choice-label">A</span><span class="quiz-choice-text">プログラミング言語の文法を詳しく解説する<span class="quiz-explanation">Claude Codeはプログラミング言語を既に知っています。文法の説明は不要で、「何を作りたいか」を具体的に伝えるほうが効果的です。</span></span></div>
+        <div class="quiz-choice" data-correct="true"><span class="quiz-choice-label">B</span><span class="quiz-choice-text">目的、技術条件、ファイル構成を具体的に伝える<span class="quiz-explanation">正解です。「何を作りたいか（目的）」「どんな技術を使うか（条件）」「どんなファイル構成にするか（出力形式）」を具体的に指定すると、意図に近いアプリが生成されます。今回学んだ7要素がその基本です。</span></span></div>
+        <div class="quiz-choice" data-correct="false"><span class="quiz-choice-label">C</span><span class="quiz-choice-text">「いい感じに作って」と一言だけ伝える<span class="quiz-explanation">曖昧な指示ではClaude Codeが意図を正確に汲み取れません。Session 3で学んだ通り、「具体的に」伝えることがAI駆動開発の基本です。</span></span></div>
       </div>
     </div>
 
     <div class="quiz-q-block">
-      <div class="quiz-q-text">Q2. server.js を修正した後、変更を反映するために必要な操作はどれですか</div>
+      <div class="quiz-q-text">Q2. アプリ開発中にエラーが出た場合、最も効率的な対処法はどれですか</div>
       <div class="quiz-choices">
-        <div class="quiz-choice" data-correct="false"><span class="quiz-choice-label">A</span><span class="quiz-choice-text">ブラウザをリロード（F5）するだけでよい<span class="quiz-explanation">ブラウザのリロードで反映されるのは public/ フォルダ内のファイル（HTML/CSS/JS）だけです。server.js の変更にはサーバーの再起動が必要です。</span></span></div>
-        <div class="quiz-choice" data-correct="true"><span class="quiz-choice-label">B</span><span class="quiz-choice-text">ターミナルで Ctrl+C → npm start でサーバーを再起動する<span class="quiz-explanation">正解です。サーバー側のコード（server.js）を変更した場合は、一度サーバーを停止してから再起動する必要があります。</span></span></div>
-        <div class="quiz-choice" data-correct="false"><span class="quiz-choice-label">C</span><span class="quiz-choice-text">npm install を再実行する<span class="quiz-explanation">npm install はライブラリのインストール時に使うコマンドです。コード修正の反映にはサーバーの再起動で十分です。</span></span></div>
+        <div class="quiz-choice" data-correct="true"><span class="quiz-choice-label">A</span><span class="quiz-choice-text">エラーメッセージ全文をClaude Codeに貼り付けて修正を依頼する<span class="quiz-explanation">正解です。エラーメッセージにはClaude Codeが原因を特定するための情報が含まれています。全文を渡すことで、修正コードまで一括で提案してくれます。</span></span></div>
+        <div class="quiz-choice" data-correct="false"><span class="quiz-choice-label">B</span><span class="quiz-choice-text">コードを全部消して最初からやり直す<span class="quiz-explanation">最初からやり直すのは非効率です。Claude Codeはエラーの原因箇所だけを特定して修正できます。</span></span></div>
+        <div class="quiz-choice" data-correct="false"><span class="quiz-choice-label">C</span><span class="quiz-choice-text">エラーメッセージを自分で翻訳してからコードを手動で直す<span class="quiz-explanation">AI駆動開発ではエラーの内容をClaude Codeに渡すだけで修正が完了します。手動修正より速く、正確です。</span></span></div>
       </div>
     </div>
 
